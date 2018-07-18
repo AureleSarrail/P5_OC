@@ -110,5 +110,15 @@ class post
 		$this->_CreatDate = $CreatDate;
 	}
 
+	// enfin on prepare l'hydratation
+
+	public function hydrate(array $data)
+	{
+		foreach($data as $key => $value)
+		{
+			$method = 'set'.ucfirst($key);
+		}
+	}
+
 
 }
