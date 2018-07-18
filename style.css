@@ -1,4 +1,10 @@
 #header
 {
-	background-color: black;
+	/*background-color: blue;*/
+	border: 2px black solid;
+}
+
+body
+{
+	background-color: powderblue;
 }
