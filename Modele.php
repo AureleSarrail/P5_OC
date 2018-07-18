@@ -76,5 +76,39 @@ class post
 		}
 	}
 
+	public function setHead($Head)
+	{
+		if(is_string($Head))
+		{
+			$this->_Head = $Head;
+		}
+	}
+
+	public function setImage($Image)
+	{
+		if(is_string($Image))
+		{
+			$this->_Image = $Image;
+		}
+	}
+
+	public function setContent($Content)
+	{
+		if(is_string($Content))
+		{
+			$this->_Content = $Content;
+		}
+	}
+
+	public function setLastModif($LastModif)
+	{
+		$this->_LastModif = $LastModif;
+	}
+
+	public function setCreatDate($CreatDate)
+	{
+		$this->_CreatDate = $CreatDate;
+	}
+
 
 }
