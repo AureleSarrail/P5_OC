@@ -1,78 +1,78 @@
 <?php
-class post
+class Post
 {
 	
 	// d'abord les attributs
 
-	private $PostId;
-	private $UserId;
-	private $Title;
-	private $Head;
-	private $Image;
-	private $Content;
-	private $LastModif;
-	private $CreatDate;
+	private $postId;
+	private $userId;
+	private $title;
+	private $head;
+	private $image;
+	private $content;
+	private $lastModif;
+	private $creatDate;
 
 	// ensuite les méthodes
 	// je commence par les getters
 
-	public function getPostId
+	public function getPostId()
 	{
-		return $this->_PostId;
+		return $this->postId;
 	}
 
-	public function getUserId
+	public function getUserId()
 	{
-		return $this->_UserId;
+		return $this->userId;
 	}
 
-	public function getTitle
+	public function getTitle()
 	{
-		return $this->_Title;
+		return $this->title;
 	}
 
-	public function getHead
+	public function getHead()
 	{
-		return $this->_Head;
+		return $this->head;
 	}
 
-	public function getImage
+	public function getImage()
 	{
-		return $this->_Image;
+		return $this->image;
 	}
 
-	public function getContent
+	public function getContent()
 	{
-		return $this->_Content;
+		return $this->content;
 	}
 
-	public function getLastModif
+	public function getLastModif()
 	{
-		return $this->_LastModif;
+		return $this->lastModif;
 	}
 
-	public function getCreatDate
+	public function getCreatDate()
 	{
-		return $this->_CreatDate;
+		return $this->creatDate;
 	}
 
 	// on fait ensuite les setters
 
 	public function setPostId($PostId)
 	{
-		$this->_PostId = (int) $PostId;
+		$this->postId = (int) $postId;
 	}
 
 	public function setUserId($UserId)
 	{
-		$this->_UserId = (int) $UserId;
+		$this->userId = (int) $userId;
 	}
 
 	public function setTitle($Title)
 	{
 		if(is_string($Title))
 		{
-			$this->_Title = $Title;
+			$this->title = $title;
 		}
 	}
 
@@ -80,7 +80,7 @@ class post
 	{
 		if(is_string($Head))
 		{
-			$this->_Head = $Head;
+			$this->head = $Head;
 		}
 	}
 

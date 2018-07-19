@@ -11,7 +11,14 @@ class model
 	public function getPosts()
 	{
 		$Db = $this->DbConnect();
-		$Posts = $Db->query('select * from post order by postid limit 10');
+		$result = $Db->query('select * from post order by postid limit 10');
+		$Posts = [];
+		while ($data = $result->fetch())
+		{
+			$post = new post();
+			$post->hydrate($data);
+			$Posts[] = $post;
+		}
 		return $Posts;
 	}
 }
