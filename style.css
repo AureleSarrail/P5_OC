@@ -9,11 +9,6 @@ html,body
 height:100%;
 }
 
-header
-{
-	padding: 0px;
-	margin:0px;
-}
 
 #name
 {
@@ -89,15 +84,53 @@ header
 #main
 {
 overflow:auto;
-padding-bottom:100px; /* this needs to be bigger than footer height*/
+padding-bottom:60px; /* this needs to be bigger than footer height*/
 }
 
 .footer 
 {
 position: relative;
-margin-top: -100px; /* negative value of footer height */
+margin-top: -50px; /* negative value of footer height */
 height: 50px;
 clear:both;
-padding-top:20px;
+padding-top:10px;
 color:#fff;
+background-color: #17B890;
+padding-bottom: 30px;
 } 
+
+.footer ul
+{
+	margin-bottom: 0px;
+}
+.footer li
+{
+	margin-bottom: 0px;
+}
+
+#content_block
+{
+	margin-top:  50px;
+}
+
+.footer_list a
+{
+	font-size: 18px;
+	font-weight: normal;
+	text-decoration: none;
+	transition: background 0.3s;
+	border-radius: 10px;
+	color: black;
+	padding: 5px 5px 5px 5px;
+}
+
+.footer_list a:hover
+{
+	background: rgba(14,108,209,.8);
+	padding: 5px 5px 5px 5px;
+	font-size: 18px;
+	font-weight: normal;
+	text-decoration: none;
+	color: black;
+
+}
