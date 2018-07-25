@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<div class="container-fluid" id="master_div">
-	<body>
-		<div id="wrapper">
+
+<body>
+	<div id="wrapper">
+		<div class="container-fluid" id="main">
 			<div id="header_global" class="row">
 				<header class="col-lg-12">
 					<div class="row">
@@ -29,16 +30,17 @@
 			</div>
 
 			<!-- Fin du contenu -->
-			<footer id="footer" class="page-footer font-small blue col-lg-12">
-	  			<div class="footer-copyright text-left py-3">
-	    			<ul id="nav_head" class=" list-unstyled list-inline">
-							<li><button  type="button" class="btn btn-link"><a href="#acceuil">Acceuil</a></button></li>
-							<li><button  type="button" class="btn btn-link"><a href="#Posts">Les Posts</a></button></li>
-							<li><button  type="button" class="btn btn-link"><a href="#contact">Contactez nous</a></button></li>
-					</ul>
-	 			 </div>
-			</footer>
+
 		</div>
+	</div>
+		<footer id="footer" class="footer col-lg-12">
+				<div class="footer-copyright text-left py-3">
+				<ul id="nav_head" class=" list-unstyled list-inline">
+						<li><button  type="button" class="btn btn-link"><a href="#acceuil">Acceuil</a></button></li>
+						<li><button  type="button" class="btn btn-link"><a href="#Posts">Les Posts</a></button></li>
+						<li><button  type="button" class="btn btn-link"><a href="#contact">Contactez nous</a></button></li>
+				</ul>
+				 </div>
+		</footer>
 	</body>
-</div>
 </html>
