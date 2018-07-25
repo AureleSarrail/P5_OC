@@ -1,18 +1,108 @@
-html 
+@font-face
 {
-  height: 100%;
+	font-family: 'Antenna';
+	src: url('fonts/ANTENNA.ttf');
 }
+
+html
+{
+	height: 100%;
+
+}
+
 
 body 
 {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
+	min-height: 100%;
+	position: relative;
 }
 
-footer
+header
+{
+	padding: 0;
+}
+
+#master_div
+{
+	
+}
+
+#name
+{
+	font-style: bold;
+	font-size: 25px;
+}
+
+#footer
 {
 	position: absolute;
-	bottom: 0;
+	bottom:0;
+	padding:0;
+	margin: 0;
+}
+
+#accroche
+{
+	font-style: italic;
+}
+
+#nav_head a
+{
+	font-size: 22px;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	transition: background 0.3s;
+	border-radius: 10px;
+	color: black;
+}
+
+#nav_head
+{
+	margin-top: 15px;
+}
+
+#nav_head li
+{
+	margin-right: 10%;
+}
+
+#nav_head a:hover
+{
+	background: rgba(14,108,209,.8);
+	padding: 5px 5px 5px 5px;
+	font-size: 22px;
+	font-weight: normal;
+	text-decoration: none;
+	color: black;
+}
+
+#master_div h3
+{
+	font-family: 'Antenna', sans-serif;
+}
+
+#master_div h2
+{
+	font-family: 'Antenna', sans-serif;
+}
+
+#master_div h1
+{
+	font-family: 'Antenna', sans-serif;
+}
+
+#header_global
+{
+	margin-bottom: 50px;
+	background-color: #17B890;
+}
+
+#wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #9DC5BB;
 }
