@@ -1,6 +1,7 @@
 <?php
 
 require_once('modele.php');
+require_once('Control.php');
 
 if(isset($_GET['action']))
 {
@@ -8,5 +9,5 @@ if(isset($_GET['action']))
 }
 else
 {
-	require_once('Home.php');	
+	homeView();
 }

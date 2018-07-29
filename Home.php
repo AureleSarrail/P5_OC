@@ -1,5 +1,5 @@
 
-<?php $viewTitle = "Page acceuil" ?>
+<?php $viewTitle = "Acceuil" ?>
 
 <?php ob_start(); ?>
 
