@@ -25,4 +25,15 @@ class model
 		}
 		return $Posts;
 	}
+
+	public function onePost($postId)
+	{
+		$Db = $this->dbConnect();
+		$data = $Db->query('select PostId,Title,Head,Image,Content,LastModif,CreatDate,UserId,Username 
+							  from post
+							  where PostId = ?');
+		$post = new post();
+		$post->hydrate($data);
+		return $post;
+	}
 }

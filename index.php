@@ -8,6 +8,11 @@ if(isset($_GET['action']))
 	{
 		listPost();
 	}
+	else
+		if (isset($_GET['postID']) AND ($_GET['action'] = 'onePost'))
+		{
+			onePostView($_GET['postId']);
+		}
 }
 else
 {

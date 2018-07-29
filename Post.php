@@ -57,9 +57,9 @@ class Post
 		return $this->creatDate;
 	}
 
-	public function getCreator()
+	public function getUsername()
 	{
-		return $this->creator;
+		return $this->username;
 	}
 
 	// on fait ensuite les setters

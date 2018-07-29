@@ -14,3 +14,10 @@ function listPost()
 	$posts = $mod->getPosts();
 	require('postsView.php');
 }
+
+function onePost($postId)
+{
+	$mod = new model();
+	$post = $mod->onePost($postId);
+	require('onePostView.php');
+}
