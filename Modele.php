@@ -17,7 +17,7 @@ class model
 							  where a.UserId = b.UserId
 							  order by a.postid limit 10');
 		$posts = [];
-		while ($data = $result->fetch())
+		while ($data = $result->fetch(PDO::FETCH_ASSOC))
 		{
 			$post = new post();
 			$post->hydrate($data);

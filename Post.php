@@ -116,9 +116,9 @@ class Post
 		$this->creatDate = $creatDate;
 	}
 
-	public function setCreator($creator)
+	public function setUsername($username)
 	{
-		$this->creator = $creator;
+		$this->username = $username;
 	}
 
 	// enfin on prepare l'hydratation
