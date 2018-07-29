@@ -12,6 +12,7 @@ class Post
 	private $content;
 	private $lastModif;
 	private $creatDate;
+	private $creator;
 
 	// ensuite les méthodes
 	// je commence par les getters
@@ -56,58 +57,68 @@ class Post
 		return $this->creatDate;
 	}
 
+	public function getCreator()
+	{
+		return $this->creator;
+	}
+
 	// on fait ensuite les setters
 
-	public function setPostId($PostId)
+	public function setPostId($postId)
 	{
 		$this->postId = (int) $postId;
 	}
 
-	public function setUserId($UserId)
+	public function setUserId($userId)
 	{
 		$this->userId = (int) $userId;
 	}
 
-	public function setTitle($Title)
+	public function setTitle($title)
 	{
-		if(is_string($Title))
+		if(is_string($title))
 		{
 			$this->title = $title;
 		}
 	}
 
-	public function setHead($Head)
+	public function setHead($head)
 	{
-		if(is_string($Head))
+		if(is_string($head))
 		{
-			$this->head = $Head;
+			$this->head = $head;
 		}
 	}
 
-	public function setImage($Image)
+	public function setImage($image)
 	{
-		if(is_string($Image))
+		if(is_string($image))
 		{
-			$this->_Image = $Image;
+			$this->image = $image;
 		}
 	}
 
-	public function setContent($Content)
+	public function setContent($content)
 	{
-		if(is_string($Content))
+		if(is_string($content))
 		{
-			$this->_Content = $Content;
+			$this->content = $content;
 		}
 	}
 
-	public function setLastModif($LastModif)
+	public function setLastModif($lastModif)
 	{
-		$this->_LastModif = $LastModif;
+		$this->lastModif = $lastModif;
 	}
 
-	public function setCreatDate($CreatDate)
+	public function setCreatDate($creatDate)
 	{
-		$this->_CreatDate = $CreatDate;
+		$this->creatDate = $creatDate;
+	}
+
+	public function setCreator($creator)
+	{
+		$this->creator = $creator;
 	}
 
 	// enfin on prepare l'hydratation
