@@ -1,0 +1,90 @@
+
+<?php
+
+class comment
+{
+	private $idCom;
+	private $content;
+	private $creationDate;
+	private $status;
+	private $userId;
+	private $postId;
+
+	// GETTERS
+
+	public function getIdCom()
+	{
+		return $this->idCom;
+	}
+
+	public function getContent()
+	{
+		return $this->content;
+	}
+
+	public function getCreationDate()
+	{
+		return $this->creationDate;
+	}
+
+	public function getStatus()
+	{
+		return $this->status;
+	}
+
+	public function getUserId()
+	{
+		return $this->userId;
+	}
+
+	public function getPostId()
+	{
+		return $this->postId;
+	}
+
+	// SETTERS
+
+	public function setIdCom($idCom)
+	{
+		$this->idCom = (int) $idCom;
+	}
+
+	public function setContent($content)
+	{
+		if(is_string($content))
+		{
+			$this->content = $content;
+		}
+	}
+
+	public function setCreationDate($creationDate)
+	{
+		$this->creationDate = $creationDate;
+	}
+
+	public function setStatus($status)
+	{
+		$this->status = (int) $status;
+	}
+
+	public function setUserId($userId)
+	{
+		$this->userId = (int) $userId;
+	}
+
+	public function setPostId($postId)
+	{
+		$this->postId = (int) $postId;
+	}
+
+	public function hydrate(array $data)
+	{
+		foreach ($data as $key => $value) 
+		{
+			$method = "set" . ucfirst($key);
+			$this->$method($value);
+		}
+	}
+
+
+}
