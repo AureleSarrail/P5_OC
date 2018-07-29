@@ -36,4 +36,21 @@ class model
 		$post->hydrate($data);
 		return $post;
 	}
+
+	public function getComments($postId)
+	{
+		$Db = $this->dbConnect();
+		$query = $Db->query('select a.IdCom,a.content,a.creationdate,a.status,b.username,a.postId
+							from comment a,user b
+							where a.UserId = b.UserId
+							and postid = ?');
+		$comments = [];
+		while ($data = $query->fetch(PDO::FETCH_ASSOC))
+		{
+			$comment = new comment();
+			$comment->hydrate($data);
+			$comments = $comment;
+		}
+		return $comments;
+	}
 }
