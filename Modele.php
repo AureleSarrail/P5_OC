@@ -1,4 +1,5 @@
 <?php
+require_once('Post.php');
 
 class model
 {

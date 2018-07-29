@@ -128,6 +128,7 @@ class Post
 		foreach($data as $key => $value)
 		{
 			$method = 'set'.ucfirst($key);
+			$this->$method($value);
 		}
 	}
 

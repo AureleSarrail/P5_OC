@@ -16,8 +16,8 @@
 						<div class="row">
 							<h1 class="col-lg-3" div id="logo">Blog AS-DEV</h1>
 							<ul id="nav_head" class=" list-unstyled list-inline col-lg-push-3 col-lg-6">
-								<li class="list-inline-item"><button  type="button" class="btn btn-link"><a href="#acceuil">Acceuil</a></button></li>
-								<li class="list-inline-item"><button  type="button" class="btn btn-link"><a href="#Posts">Les Posts</a></button></li>
+								<li class="list-inline-item"><button  type="button" class="btn btn-link"><a href="index.php">Acceuil</a></button></li>
+								<li class="list-inline-item"><button  type="button" class="btn btn-link"><a href="index.php?action=listPost">Les Posts</a></button></li>
 								<li class="list-inline-item"><button  type="button" class="btn btn-link"><a href="#contact">Contactez nous</a></button></li>
 							</ul>
 						</div>
@@ -38,14 +38,13 @@
 			<div class="row">
 				<div class="footer-copyright text-left py-3 col-lg-12">
 					<ul class=" list-unstyled list-inline footer_list">
-						<li class="col-lg-offset-1 col-lg-1"><a href="#acceuil">Acceuil</a></li>
-						<li class="col-lg-1"><a href="#Posts">Les Posts</a></li>
+						<li class="col-lg-offset-1 col-lg-1"><a href="index.php">Acceuil</a></li>
+						<li class="col-lg-1"><a href="index.php?action=listPost">Les Posts</a></li>
 						<li class="col-lg-1"><a href="#contact">Contactez nous</a></li>
 						<li class="col-lg-offset-7 col-lg-1"><a href="#connexion">Se connecter</a></li>
 					</ul>
 				</div>
 			</div>
 		</footer>
-
 	</body>
 </html>

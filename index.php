@@ -1,11 +1,13 @@
 <?php
 
-require_once('modele.php');
-require_once('Control.php');
+require_once('Controller.php');
 
 if(isset($_GET['action']))
 {
-	echo('action est défini');
+	if ($_GET['action'] = 'listPost')
+	{
+		listPost();
+	}
 }
 else
 {
