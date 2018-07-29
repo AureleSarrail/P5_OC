@@ -7,7 +7,7 @@ class comment
 	private $content;
 	private $creationDate;
 	private $status;
-	private $userId;
+	private $username;
 	private $postId;
 
 	// GETTERS
@@ -32,9 +32,9 @@ class comment
 		return $this->status;
 	}
 
-	public function getUserId()
+	public function getUsername()
 	{
-		return $this->userId;
+		return $this->username;
 	}
 
 	public function getPostId()
@@ -67,7 +67,7 @@ class comment
 		$this->status = (int) $status;
 	}
 
-	public function setUserId($userId)
+	public function setUsername($userId)
 	{
 		$this->userId = (int) $userId;
 	}
