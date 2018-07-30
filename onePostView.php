@@ -36,10 +36,17 @@ foreach ($comments as $com)
 		</div>
 	</div>
 
+	<br>
+	<br>
+
 	<?php
 }
 
+?>
 
+<a href="index.php?action=listPost">Retour à la liste des posts</a>
+
+<?php
 
 
 $viewContent = ob_get_clean();
