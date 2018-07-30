@@ -19,5 +19,6 @@ function onePost($postId)
 {
 	$mod = new model();
 	$post = $mod->onePost($postId);
+	$comments = $mod->getComments($postId);
 	require('onePostView.php');
 }

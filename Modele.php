@@ -1,5 +1,6 @@
 <?php
 require_once('Post.php');
+require_once('Comment.php');
 
 class model
 {
@@ -29,9 +30,11 @@ class model
 	public function onePost($postId)
 	{
 		$Db = $this->dbConnect();
-		$data = $Db->query('select PostId,Title,Head,Image,Content,LastModif,CreatDate,UserId,Username 
-							  from post
-							  where PostId = ?');
+		$result = $Db->query('select a.PostId,a.Title,a.Head,a.Image,a.Content,a.LastModif,a.CreatDate,a.UserId,b.Username 
+							  from post a, user b
+							  where a.UserId = b.UserId
+							  and a.PostId = ' . $postId);
+		$data = $result->fetch(PDO::FETCH_ASSOC);
 		$post = new post();
 		$post->hydrate($data);
 		return $post;
@@ -40,16 +43,16 @@ class model
 	public function getComments($postId)
 	{
 		$Db = $this->dbConnect();
-		$query = $Db->query('select a.IdCom,a.content,a.creationdate,a.status,b.username,a.postId
+		$query = $Db->query('select a.IdCom,a.Content,a.CreationDate,a.Status,b.Username,a.PostId
 							from comment a,user b
 							where a.UserId = b.UserId
-							and postid = ?');
+							and a.PostId = ' . $postId);
 		$comments = [];
 		while ($data = $query->fetch(PDO::FETCH_ASSOC))
 		{
 			$comment = new comment();
 			$comment->hydrate($data);
-			$comments = $comment;
+			$comments[] = $comment;
 		}
 		return $comments;
 	}

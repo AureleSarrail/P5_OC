@@ -67,9 +67,9 @@ class comment
 		$this->status = (int) $status;
 	}
 
-	public function setUsername($userId)
+	public function setUsername($username)
 	{
-		$this->userId = (int) $userId;
+		$this->username = $username;
 	}
 
 	public function setPostId($postId)
