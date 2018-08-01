@@ -65,3 +65,22 @@ class CommentManager extends Model
 		return $comments;
 	}
 }
+
+class UserManager extends Model
+{
+	public function testExist($mail)
+	{
+		$Db = $this->dbConnect();
+		$query = $Db->prepare('select mail
+							   from user
+							   where mail = ?')
+		$query->execute($mail);
+		
+	}
+
+
+	public function getUser($mail,$password)
+	{
+
+	}
+}
