@@ -139,3 +139,18 @@ background-color: #17B890;
 	color: black;
 
 }
+
+.post_global
+{
+	border: 2px inset black;
+	padding: 10px 10px 10px 10px;
+	border-radius: 10px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.com_global hr
+{
+	border: none;
+	border-bottom: 1px solid black;
+}
+
