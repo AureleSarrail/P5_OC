@@ -9,7 +9,6 @@ class User
 	private $username;
 	private $mail;
 	private $rights;
-	private $password;
 
 	// GETTERS
 
@@ -41,11 +40,6 @@ class User
 	public function getRights()
 	{
 		return $this->rights;
-	}
-
-	public function getPassword()
-	{
-		return $this->password;
 	}
 
 	// SETTERS
@@ -90,14 +84,6 @@ class User
 	public function setRights($rights)
 	{
 		$this->rights = (int) $rights;
-	}
-
-	public function setPassword($password)
-	{
-		if(is_string($password))
-		{
-			$this->password = $password;
-		}
 	}
 
 	// HYDRATE

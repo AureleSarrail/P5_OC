@@ -41,7 +41,18 @@
 						<li class="col-lg-offset-1 col-lg-1"><a href="index.php">Acceuil</a></li>
 						<li class="col-lg-1"><a href="index.php?action=listPost">Les Posts</a></li>
 						<li class="col-lg-2"><a href="#contact">Contactez nous</a></li>
-						<li class="col-lg-offset-6 col-lg-1"><a href="index.php?action=Connect">Se connecter</a></li>
+						<?php
+						if (isset($_SESSION['username']))
+						{
+							?> <p class="col-lg-offset-5 col-lg-2 username">Bonjour <?= $_SESSION['username'] ?> !</p>
+						<?php
+						}
+						else
+						{
+							?><li class="col-lg-offset-6 col-lg-1"><a href="index.php?action=Connect">Se connecter</a></li>	
+							<?php
+						}?>
+						
 					</ul>
 				</div>
 			</div>

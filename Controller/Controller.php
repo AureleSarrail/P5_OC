@@ -41,4 +41,20 @@ class Controller
 		$exist = $userMod->testExist($mail);
 		return $exist;
 	}
+
+	function checkPassword($mail)
+	{
+		$userMod = new UserManager();
+		$pass = $userMod->checkPassword($mail);
+		return $pass;
+	}
+
+	function connect($mail)
+	{
+		$userMod = new UserManager();
+		$user = $userMod->getUser($mail);
+		$_SESSION['username'] = $user->getUsername();
+		$_SESSION['rights'] = $user->getRights();
+		require_once('Views/Home.php');
+	}
 }
