@@ -15,8 +15,9 @@ foreach ($posts as $p)
 				<h3 class="col-lg-12"><?= $p->getHead() ?></h3>
 				<div class="row">		
 					<p class="col-lg-12"><?= $p->getContent() ?></p>
-					<em><p class="col-lg-12">Créé par <strong><?= $p->getUsername() ?></strong> le <strong><?= $p->getCreatDate(); ?></strong></p></em>
-				</div>
+					<em><p class="col-lg-12">Créé par <strong><?= $p->getUsername() ?></strong> 
+						le <strong><?= substr($p->getCreatDate(),-2); ?>/<?= substr($p->getCreatDate(),5,2); ?>/<?= substr($p->getCreatDate(),0,4); ?></strong></p></em>
+				</div> 
 			</div>
 		</div>
 	</div>

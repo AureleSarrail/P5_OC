@@ -28,5 +28,5 @@ class Controller
 		$comments = $comMod->getComments($postId);
 
 		require('Views/onePostView.php');
-}
+	}
 }
