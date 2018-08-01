@@ -51,4 +51,4 @@ foreach ($comments as $com)
 
 $viewContent = ob_get_clean();
 
-require_once('template.php');
+require_once('Views/template.php');

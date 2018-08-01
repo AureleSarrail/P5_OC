@@ -1,6 +1,6 @@
 <?php
 
-require_once('Controller.php');
+require_once('Controller/Controller.php');
 
 
 if(isset($_GET['action']))

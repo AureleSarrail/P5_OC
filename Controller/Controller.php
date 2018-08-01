@@ -1,24 +1,24 @@
 
 <?php
 
-require_once('Modele.php');
+require_once('Model/Model.php');
 
 function homeView()
 {
-	require('home.php');
+	require('Views/home.php');
 }
 
 function listPost()
 {
-	$mod = new model();
+	$mod = new Model();
 	$posts = $mod->getPosts();
-	require('postsView.php');
+	require('Views/postsView.php');
 }
 
 function onePost($postId)
 {
-	$mod = new model();
+	$mod = new Model();
 	$post = $mod->onePost($postId);
 	$comments = $mod->getComments($postId);
-	require('onePostView.php');
+	require('Views/onePostView.php');
 }

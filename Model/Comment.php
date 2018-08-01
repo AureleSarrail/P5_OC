@@ -1,7 +1,7 @@
 
 <?php
 
-class comment
+class Comment
 {
 	private $idCom;
 	private $content;
