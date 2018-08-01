@@ -1,11 +1,11 @@
 
-<?php $viewTitle = "Page acceuil" ?>
+<?php $viewTitle = "Acceuil" ?>
 
 <?php ob_start(); ?>
 
 <div class="row" id="title_bloc">
 	<div class="col-lg-offset-2 col-lg-7">
-		<img src="images/photo.jpeg" alt="photo_de_moi" class="col-lg-1">
+		<img src="Style/images/photo.jpeg" alt="photo_de_moi" class="col-lg-1">
 		<div class="col-lg-5">
 			<p class="col-lg-12" id="name">Aurèle Sarrail</p>
 			<p id="accroche" class="col-lg-12">Le développeur de votre future solution Web !</p>
@@ -46,4 +46,4 @@
 
 <?php $viewContent = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('Views/template.php'); ?>
