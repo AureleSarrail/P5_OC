@@ -4,12 +4,15 @@ require_once('Model/Comment.php');
 
 class Model
 {
-	private function dbConnect()
+	protected function dbConnect()
 	{
 		$Db = new PDO('mysql:host=localhost;dbname=Blog_asdev;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		return $Db;
 	}
+}
 
+class PostManager extends Model
+{
 	public function getPosts()
 	{
 		$Db = $this->dbConnect();
@@ -40,7 +43,10 @@ class Model
 		$post->hydrate($data);
 		return $post;
 	}
+}
 
+class CommentManager extends Model
+{
 	public function getComments($postId)
 	{
 		$Db = $this->dbConnect();

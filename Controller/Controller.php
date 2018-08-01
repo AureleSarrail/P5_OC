@@ -10,15 +10,20 @@ function homeView()
 
 function listPost()
 {
-	$mod = new Model();
-	$posts = $mod->getPosts();
+	$postMod = new PostManager();
+
+	$posts = $postMod->getPosts();
+	
 	require('Views/postsView.php');
 }
 
 function onePost($postId)
 {
-	$mod = new Model();
-	$post = $mod->onePost($postId);
-	$comments = $mod->getComments($postId);
+	$postMod = new PostManager();
+	$comMod = new CommentManager();
+
+	$post = $postMod->onePost($postId);
+	$comments = $comMod->getComments($postId);
+
 	require('Views/onePostView.php');
 }
