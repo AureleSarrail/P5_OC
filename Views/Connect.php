@@ -8,8 +8,8 @@ ob_start();
 
 <div class="row">
 	<form action="index.php?action=testConnect" method="POST" class='text-center'>
-		<label>Votre Pseudo : <input type="text"></label><br>
-		<label>Votre mot de passe : <input type="password"></label><br>
+		<label>Votre Mail : <input type="text" name="mail"></label><br>
+		<label>Votre mot de passe : <input type="password" name="password"></label><br>
 		<input type="submit">
 	</form>
 </div>

@@ -34,4 +34,11 @@ class Controller
 	{
 		require('Views/Connect.php');
 	}
+
+	function UserExist($mail)
+	{
+		$userMod = new UserManager();
+		$exist = $userMod->testExist($mail);
+		return $exist;
+	}
 }

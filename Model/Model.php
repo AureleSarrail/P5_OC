@@ -71,11 +71,12 @@ class UserManager extends Model
 	public function testExist($mail)
 	{
 		$Db = $this->dbConnect();
-		$query = $Db->prepare('select mail
+		$query = $Db->prepare('select count(*) as nb
 							   from user
-							   where mail = ?')
-		$query->execute($mail);
-		
+							   where mail = ?');
+		$query->execute(array($mail));
+
+		return $query;
 	}
 
 

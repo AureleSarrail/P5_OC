@@ -17,7 +17,19 @@ if(isset($_GET['action']))
 	{
 		$control->listPost();
 	}
-	elseif ($_GET['action'] == 'Connect')
+	elseif ($_GET['action'] == 'testConnect')
+	{
+		if (isset($_POST['mail']))
+		{
+
+			$test = $control->userExist($_POST['mail']);
+			if ($test = 1)
+			{
+				
+			}
+		}
+	}
+	elseif ($_GET['action'] = 'Connect')
 	{
 		$control->connectionPage();
 	}
