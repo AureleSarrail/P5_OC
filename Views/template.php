@@ -41,7 +41,7 @@
 						<li class="col-lg-offset-1 col-lg-1"><a href="index.php">Acceuil</a></li>
 						<li class="col-lg-1"><a href="index.php?action=listPost">Les Posts</a></li>
 						<li class="col-lg-2"><a href="#contact">Contactez nous</a></li>
-						<li class="col-lg-offset-6 col-lg-1"><a href="#connexion">Se connecter</a></li>
+						<li class="col-lg-offset-6 col-lg-1"><a href="index.php?action=Connect">Se connecter</a></li>
 					</ul>
 				</div>
 			</div>

@@ -29,4 +29,9 @@ class Controller
 
 		require('Views/onePostView.php');
 	}
+
+	function connectionPage()
+	{
+		require('Views/Connect.php');
+	}
 }

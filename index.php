@@ -17,6 +17,10 @@ if(isset($_GET['action']))
 	{
 		$control->listPost();
 	}
+	elseif ($_GET['action'] == 'Connect')
+	{
+		$control->connectionPage();
+	}
 }
 else
 {
