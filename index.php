@@ -2,6 +2,7 @@
 
 require_once('Controller/Controller.php');
 
+$control = new Controller();
 
 if(isset($_GET['action']))
 {
@@ -9,16 +10,16 @@ if(isset($_GET['action']))
 	{
 		if ($_GET['action'] == 'onePost')
 		{
-		onePost($_GET['postId']);
+			$control->onePost($_GET['postId']);
 		}
 	}
 	elseif ($_GET['action'] == 'listPost')
 	{
-		listPost();
+		$control->listPost();
 	}
 }
 else
 {
-	homeView();
+	$control->homeView();
 }
 
