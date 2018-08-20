@@ -12,7 +12,9 @@ class UserManager extends Model
 							   from user
 							   where mail = ?');
 		$query->execute(array($mail));
-		return $query;
+		$result = $query->fetch();
+		$count = $result[0];
+		return $count;
 	}
 
 
