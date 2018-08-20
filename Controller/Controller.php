@@ -63,6 +63,13 @@ class Controller
         require_once('Views/Home.php');
     }
 
+    function deconnection()
+    {
+        $_SESSION = array();
+        session_destroy();
+        $this->homeView();
+    }
+
     function creationPostPage()
     {
         require_once('Views/CreationPost.php');

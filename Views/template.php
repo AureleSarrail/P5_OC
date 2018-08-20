@@ -69,7 +69,8 @@
 							<?php }
 							if (isset($_SESSION['username']))
 							{
-								?> <p class="col-lg-offset-3 col-lg-2 username">Bonjour <?= $_SESSION['username'] ?> !</p>
+								?> <p class="col-lg-offset-3 col-lg-2 username">Bonjour <?= $_SESSION['username'] ?> !
+									(<a href="index.php?action=deconnect">Deconnexion</a>)</p>
 							<?php
 							}
 							else
