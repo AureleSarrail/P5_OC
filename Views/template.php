@@ -63,7 +63,7 @@
 							<?php }
 							elseif ($_SESSION['rights'] == 1)
 							{ ?>
-								<li class="col-lg-offset-1 col-lg-2"><a href="AdminPost.php">Gestion posts</a></li>
+								<li class="col-lg-offset-1 col-lg-2"><a href="index.php?action=createPost">Creation posts</a></li>
 								<li class="col-lg-2"><a href="AdminCom.php">Gestion Com</a></li>
 								<li class="col-lg-2"><a href="#AdminUser.php">Gestion Utilisateurs</a></li>
 							<?php }

@@ -1,7 +1,9 @@
 <?php
-
-require_once('Controller/Controller.php');
 session_start();
+
+// require_once('Controller/Controller.php');
+require('vendor/autoload.php');
+use Controller\Controller;
 
 $control = new Controller();
 
@@ -23,24 +25,26 @@ if(isset($_GET['action']))
 		if (isset($_POST['mail']))
 		{
 			$test = $control->userExist($_POST['mail']);
-			if ($test = 1)
+			if (int($test) == 1)
 			{
 				$pass = $control->checkPassword($_POST['mail']);
 				if (password_verify($_POST['password'],$pass))
 				{
 					$control->connect($_POST['mail']);
 				}
-				else
-				{
-					echo(password_hash($_POST['password'],PASSWORD_DEFAULT));
-					echo(password_verify($pass,PASSWORD_DEFAULT));
-				}
 			}
 		}
 	}
-	elseif ($_GET['action'] = 'Connect')
+	elseif ($_GET['action'] == 'Connect')
 	{
 		$control->connectionPage();
+	}
+	elseif ($_GET['action'] == 'createPost')
+	{
+		if ($_SESSION['rights'] == 1)
+		{
+			$control->creationPostPage();
+		}
 	}
 }
 else

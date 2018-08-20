@@ -1,4 +1,7 @@
 <?php
+
+namespace Model\Entity;
+
 class Post
 {
 	
