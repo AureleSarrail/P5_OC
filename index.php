@@ -22,17 +22,9 @@ if(isset($_GET['action']))
 	}
 	elseif ($_GET['action'] == 'testConnect')
 	{
-		if (isset($_POST['mail']))
+		if (isset($_POST['mail']) && (isset($_POST['password'])))
 		{
-			$test = $control->userExist($_POST['mail']);
-			if ($test == 1)
-			{
-				$pass = $control->checkPassword($_POST['mail']);
-				if (password_verify($_POST['password'],$pass))
-				{
-					$control->connect($_POST['mail']);
-				}
-			}
+			$control->userCheck($_POST['mail'],$_POST['password']);
 		}
 	}
 	elseif ($_GET['action'] == 'Connect')

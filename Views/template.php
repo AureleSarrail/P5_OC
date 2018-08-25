@@ -29,6 +29,7 @@
 				<?= $viewContent ?>
 			</div>
 
+
 			<!-- Fin du contenu -->
 
 			</div>

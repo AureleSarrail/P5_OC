@@ -6,6 +6,7 @@ require('vendor/autoload.php');
 use Model\Manager\PostManager;
 use Model\Manager\CommentManager;
 use Model\Manager\UserManager;
+use Model\Security\UserCheck;
 
 class Controller
 {
@@ -39,18 +40,19 @@ class Controller
         require('Views/Connect.php');
     }
 
-    function UserExist($mail)
+    function UserCheck($mail,$password)
     {
-        $userMod = new UserManager();
-        $exist = $userMod->testExist($mail);
-        return $exist;
-    }
+        $userSecurity = new UserCheck();
+        $testExist = $userSecurity->testExist($mail);
+        if ($testExist == 1)
+        {
+            $dbPass = $userSecurity->checkPassword($mail);
+            if (password_verify($password,$dbPass))
+                {
+                    $this->connect($mail);
+                }
+        }
 
-    function checkPassword($mail)
-    {
-        $userMod = new UserManager();
-        $pass = $userMod->checkPassword($mail);
-        return $pass;
     }
 
     function connect($mail)
