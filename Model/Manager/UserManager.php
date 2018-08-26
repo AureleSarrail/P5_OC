@@ -22,10 +22,10 @@ class UserManager extends Model
 	{
 		$Db = $this->dbConnect();
 		$user = new User();
-		$data['firstname'] = $firstname;
-		$data['name'] = $name;
-		$data['username'] = $username;
-		$data['mail'] = $mail;
+		$data['firstname'] = htmlspecialchars($firstname);
+		$data['name'] = htmlspecialchars($name);
+		$data['username'] = htmlspecialchars($username);
+		$data['mail'] = htmlspecialchars($mail);
 		$pass = password_hash($password,PASSWORD_DEFAULT);
 		$user->hydrate($data);
 		$insert = $Db->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) values (?,?,?,?,?,2)');

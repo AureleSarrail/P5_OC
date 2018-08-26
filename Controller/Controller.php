@@ -97,4 +97,12 @@ class Controller
             $this->connect($mail);
         }
     }
+
+    function inserPost($title,$head,$image,$content,$userId,$username,$rights)
+    {
+        $postMan = new PostManager();
+        $postMan->insertPost($title,$head,$image,$content,$userId,$username);
+        $_GET['action'] = 'listPost';
+        require_once('index.php');
+    }
 }
