@@ -1,7 +1,8 @@
 <?php
 namespace Model\Entity;
+use Model\Entity\Entity;
 
-class User
+class User Extends Entity
 {
 	private $userId;
 	private $name;

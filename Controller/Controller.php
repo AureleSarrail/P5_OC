@@ -6,7 +6,7 @@ require('vendor/autoload.php');
 use Model\Manager\PostManager;
 use Model\Manager\CommentManager;
 use Model\Manager\UserManager;
-use Model\Security\UserCheck;
+use Model\Security\Security;
 
 class Controller
 {
@@ -40,9 +40,9 @@ class Controller
         require('Views/Connect.php');
     }
 
-    function UserCheck($mail,$password)
+    function connectionCheck($mail,$password)
     {
-        $userSecurity = new UserCheck();
+        $userSecurity = new Security();
         $testExist = $userSecurity->testExist($mail);
         if ($testExist == 1)
         {
@@ -75,5 +75,26 @@ class Controller
     function creationPostPage()
     {
         require_once('Views/CreationPost.php');
+    }
+
+    function createAccountView()
+    {
+        require_once('Views/createAccountView.php');
+    }
+
+    function createUser($firstname,$name,$username,$mail,$password)
+    {
+        $userSecurity = new Security();
+        $testExist = $userSecurity->testExist($mail);
+        if ($testExist == 1)
+        {
+            require_once('Views/createAccountView.php?erreur=1');
+        }
+        else
+        {
+            $userMan = new UserManager();
+            $userMan->createUser($firstname,$name,$username,$mail,$password);
+            $this->connect($mail);
+        }
     }
 }

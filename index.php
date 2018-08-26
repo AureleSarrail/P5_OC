@@ -24,7 +24,7 @@ if(isset($_GET['action']))
 	{
 		if (isset($_POST['mail']) && (isset($_POST['password'])))
 		{
-			$control->userCheck($_POST['mail'],$_POST['password']);
+			$control->connectionCheck($_POST['mail'],$_POST['password']);
 		}
 	}
 	elseif ($_GET['action'] == 'Connect')
@@ -41,6 +41,18 @@ if(isset($_GET['action']))
 		{
 			$control->creationPostPage();
 		}
+	}
+	elseif ($_GET['action'] == 'createAccount') 
+	{
+		$control->createAccountView();
+	}
+	elseif ($_GET['action'] == 'createUser')
+	{
+		if (isset($_POST['firstName']) && isset($_POST['name']) && isset($_POST['username']) && isset($_POST['mail']) && isset($_POST['password']))
+		{
+			$control->createUser($_POST['firstName'],$_POST['name'],$_POST['username'],$_POST['mail'],$_POST['password']);
+		}
+		
 	}
 }
 else

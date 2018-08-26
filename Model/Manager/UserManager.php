@@ -17,4 +17,18 @@ class UserManager extends Model
 		$user->hydrate($data);
 		return $user;
 	}
+
+	public function createUser($firstname,$name,$username,$mail,$password)
+	{
+		$Db = $this->dbConnect();
+		$user = new User();
+		$data['firstname'] = $firstname;
+		$data['name'] = $name;
+		$data['username'] = $username;
+		$data['mail'] = $mail;
+		$pass = password_hash($password,PASSWORD_DEFAULT);
+		$user->hydrate($data);
+		$insert = $Db->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) values (?,?,?,?,?,2)');
+		$insert->execute(array($user->getName(),$user->getFirstName(),$user->getUsername(),$user->getMail(),$pass));
+	}
 }

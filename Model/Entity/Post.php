@@ -1,8 +1,9 @@
 <?php
 
 namespace Model\Entity;
+use Model\Entity\Entity;
 
-class Post
+class Post extends Entity
 {
 	
 	// d'abord les attributs
@@ -123,17 +124,5 @@ class Post
 	{
 		$this->username = $username;
 	}
-
-	// enfin on prepare l'hydratation
-
-	public function hydrate(array $data)
-	{
-		foreach($data as $key => $value)
-		{
-			$method = 'set'.ucfirst($key);
-			$this->$method($value);
-		}
-	}
-
 
 }

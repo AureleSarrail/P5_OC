@@ -12,6 +12,13 @@ ob_start();
 		<label>Votre mot de passe : <input type="password" name="password"></label><br>
 		<input type="submit">
 	</form>
+	<br>
+</div>
+
+<div class="row">
+	<div class="text-center col-lg-offset-3 col-lg-6">
+		<a href="index.php?action=createAccount">Vous n'avez pas encore de compte - cliquez ici</a>	
+	</div>
 </div>
 
 <?php

@@ -3,7 +3,7 @@ namespace Model\Security;
 
 use Model\Manager\Model;
 
-class UserCheck extends Model
+class Security extends Model
 {
 	public function testExist($mail)
 	{
