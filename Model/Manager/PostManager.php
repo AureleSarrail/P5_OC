@@ -1,15 +1,10 @@
 <?php
-require_once('Model/Post.php');
-require_once('Model/Comment.php');
 
-class Model
-{
-	protected function dbConnect()
-	{
-		$Db = new PDO('mysql:host=localhost;dbname=Blog_asdev;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		return $Db;
-	}
-}
+namespace Model\Manager;
+
+require('vendor/autoload.php');
+use \Model\Entity\Post;
+
 
 class PostManager extends Model
 {
@@ -21,7 +16,7 @@ class PostManager extends Model
 							  where a.UserId = b.UserId
 							  order by a.postid limit 10');
 		$posts = [];
-		while ($data = $result->fetch(PDO::FETCH_ASSOC))
+		while ($data = $result->fetch(\PDO::FETCH_ASSOC))
 		{
 			$post = new Post();
 			$post->hydrate($data);
@@ -38,30 +33,24 @@ class PostManager extends Model
 							  where a.UserId = b.UserId
 							  and a.PostId = ?');
 		$query->execute(array($postId));
-		$data = $query->fetch(PDO::FETCH_ASSOC);
+		$data = $query->fetch(\PDO::FETCH_ASSOC);
 		$post = new Post();
 		$post->hydrate($data);
 		return $post;
 	}
-}
 
-class CommentManager extends Model
-{
-	public function getComments($postId)
+	public function insertPost($title,$head,$image,$content,$userId,$username)
 	{
 		$Db = $this->dbConnect();
-		$query = $Db->prepare('select a.IdCom,a.Content,a.CreationDate,a.Status,b.Username,a.PostId
-							from comment a,user b
-							where a.UserId = b.UserId
-							and a.PostId = ?');
-		$query->execute(array($postId));
-		$comments = [];
-		while ($data = $query->fetch(PDO::FETCH_ASSOC))
-		{
-			$comment = new Comment();
-			$comment->hydrate($data);
-			$comments[] = $comment;
-		}
-		return $comments;
+		$data['title'] = htmlspecialchars($title);
+		$data['head'] = htmlspecialchars($head);
+		$data['image'] = htmlspecialchars($image);
+		$data['content'] = htmlspecialchars($content);
+		$data['userId'] = htmlspecialchars($userId);
+		$data['username'] = htmlspecialchars($username);
+		$post = new Post();
+		$post->hydrate($data);
+		$insert = $Db->prepare('insert into post (title,head,image,content,LastModif,creatdate,userid) values (?,?,?,?,CURRENT_DATE,CURRENT_DATE,?');
+		$insert->execute(array($post->getTitle(),$post->getHead(),$post->getImage(),$post->getContent(),$post->getUserId()));
 	}
 }

@@ -140,6 +140,15 @@ background-color: #17B890;
 
 }
 
+.username
+{
+	font-size: 18px;
+	font-weight: normal;
+	text-decoration: none;
+	color: black;
+	padding: 5px 5px 5px 5px;
+}
+
 .post_global
 {
 	border: 2px inset black;

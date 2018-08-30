@@ -1,7 +1,8 @@
-
 <?php
+namespace Model\Entity;
+use Model\Entity\Entity;
 
-class Comment
+class Comment extends Entity
 {
 	private $idCom;
 	private $content;
@@ -76,15 +77,4 @@ class Comment
 	{
 		$this->postId = (int) $postId;
 	}
-
-	public function hydrate(array $data)
-	{
-		foreach ($data as $key => $value) 
-		{
-			$method = "set" . ucfirst($key);
-			$this->$method($value);
-		}
-	}
-
-
 }
