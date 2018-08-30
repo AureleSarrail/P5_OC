@@ -68,8 +68,7 @@
                     </div>
                 </div>
             </footer>
-        <?php
-        } elseif (isset($_SESSION['username'])) {
+        <?php } elseif (isset($_SESSION['username'])) {
             ?>
             <footer id="footer" class="footer col-lg-12">
                 <div class="row">
