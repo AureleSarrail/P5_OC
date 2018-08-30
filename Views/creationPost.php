@@ -8,13 +8,13 @@ ob_start();
 		<div class="form-group">
 			<form action="index.php?action=postCreated" method="POST">
 				<label for="Title">Le titre : </label>
-				<input type="text"  name="Title" id="Title" maxlength="255" size="100"><br>
+				<input type="text"  name="title" id="Title" maxlength="255" size="100"><br>
 				<label for="Head">Le chapeau : </label>
-				<input type="text" name="Head" id="Head" maxlength="255" size="100"><br>
+				<input type="text" name="head" id="Head" maxlength="255" size="100"><br>
 				<label for="Image">L'URL de l'image : </label>
-				<input type="text" name="Image" id="Image" maxlength="255" size="100"><br>
+				<input type="text" name="image" id="Image" maxlength="255" size="100"><br>
 				<label for="Content">Le contenu : </label>
-				<textarea name="Content" id="Content" rows="10" cols="100"></textarea><br>
+				<textarea name="content" id="Content" rows="10" cols="100"></textarea><br>
 				<div class="row">
 					<input type="submit" class="col-lg-offset-5 col-lg-2 text-center">
 				</div>

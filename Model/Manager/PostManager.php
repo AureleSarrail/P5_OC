@@ -42,15 +42,10 @@ class PostManager extends Model
 	public function insertPost($title,$head,$image,$content,$userId,$username)
 	{
 		$Db = $this->dbConnect();
-		$data['title'] = htmlspecialchars($title);
-		$data['head'] = htmlspecialchars($head);
-		$data['image'] = htmlspecialchars($image);
-		$data['content'] = htmlspecialchars($content);
-		$data['userId'] = htmlspecialchars($userId);
-		$data['username'] = htmlspecialchars($username);
+		$data = compact("title","head","image","content","userId","username");
 		$post = new Post();
 		$post->hydrate($data);
-		$insert = $Db->prepare('insert into post (title,head,image,content,LastModif,creatdate,userid) values (?,?,?,?,CURRENT_DATE,CURRENT_DATE,?');
+		$insert = $Db->prepare('insert into post (title,head,image,content,LastModif,creatdate,userid) values (?,?,?,?,CURRENT_DATE,CURRENT_DATE,?)');
 		$insert->execute(array($post->getTitle(),$post->getHead(),$post->getImage(),$post->getContent(),$post->getUserId()));
 	}
 }

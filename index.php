@@ -56,10 +56,13 @@ if(isset($_GET['action']))
 	}
 	elseif ($_GET['action'] == 'postCreated')
 	{
+		echo('ici');
 		if(isset($_POST['title']) && isset($_POST['head']) && isset($_POST['image']) && isset($_POST['content']))
 		{
+			echo('ou la');
 			if(isset($_SESSION['userId']) && isset($_SESSION['username']) && isset($_SESSION['rights']))
 			{
+				echo('et là');
 				$control->insertPost($_POST['title'],$_POST['head'],$_POST['image'],$_POST['content'],$_SESSION['userId'],$_SESSION['username'],$_SESSION['rights']);
 			}
 		}
