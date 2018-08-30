@@ -15,6 +15,10 @@ ob_start(); ?>
                         <?= substr($post->getCreatDate(), 5, 2); ?>/
                         <?= substr($post->getCreatDate(), 0, 4); ?></strong></p></em>
         </div>
+        <?php 
+        if (isset($_SESSION['rights'])) {
+            ?> <a href="index.php?action=modifyPost&amp;postId=<?= $post->getPostId() ?>">(Modifier)</a> <?php
+        } ?>
     </div>
 </div>
 <br>

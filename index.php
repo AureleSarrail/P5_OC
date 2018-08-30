@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// require_once('Controller/Controller.php');
 require('vendor/autoload.php');
 use Controller\MainController;
 use Controller\PostController;
@@ -14,31 +13,31 @@ $postControl = new PostController();
 if (isset($_GET['action'])) {
     if (isset($_GET['postId'])) {
         if ($_GET['action'] == 'onePost') {
-            $control->onePost($_GET['postId']);
+            $postControl->onePost($_GET['postId']);
         }
     } elseif ($_GET['action'] == 'listPost') {
-        $control->listPost();
+        $postControl->listPost();
     } elseif ($_GET['action'] == 'testConnect') {
         if (isset($_POST['mail']) && (isset($_POST['password']))) {
-            $control->connectionCheck($_POST['mail'], $_POST['password']);
+            $userControl->connectionCheck($_POST['mail'], $_POST['password']);
         }
     } elseif ($_GET['action'] == 'Connect') {
         $control->connectionPage();
     } elseif ($_GET['action'] == 'deconnect') {
-        $control->deconnection();
+        $userControl->deconnection();
     } elseif ($_GET['action'] == 'createPost') {
         if ($_SESSION['rights'] == 1) {
-            $control->creationPostPage();
+            $postControl->creationPostPage();
         }
     } elseif ($_GET['action'] == 'createAccount') {
-        $control->createAccountView();
+        $userControl->createAccountView();
     } elseif ($_GET['action'] == 'createUser') {
         if (isset($_POST['firstName']) &&
             isset($_POST['name']) &&
             isset($_POST['username']) &&
             isset($_POST['mail']) &&
             isset($_POST['password'])) {
-            $control->createUser(
+            $userControl->createUser(
                 $_POST['firstName'],
                 $_POST['name'],
                 $_POST['username'],
@@ -46,17 +45,14 @@ if (isset($_GET['action'])) {
             $_POST['password']);
         }
     } elseif ($_GET['action'] == 'postCreated') {
-        echo('ici');
         if (isset($_POST['title']) &&
             isset($_POST['head']) &&
             isset($_POST['image']) &&
             isset($_POST['content'])) {
-            echo('ou la');
             if (isset($_SESSION['userId']) &&
             isset($_SESSION['username']) &&
             isset($_SESSION['rights'])) {
-                echo('et là');
-                $control->insertPost(
+                $postControl->insertPost(
                     $_POST['title'],
                     $_POST['head'],
                     $_POST['image'],
@@ -65,6 +61,12 @@ if (isset($_GET['action'])) {
                     $_SESSION['username'],
                 $_SESSION['rights']);
             }
+        }
+    } elseif ($_GET['action'] == 'modifyPost') {
+        echo('là');
+        if (isset($_GET['postId'])) {
+            echo ('on est là');
+            $postControl->modifyPost($_GET['postId']);
         }
     }
 } else {

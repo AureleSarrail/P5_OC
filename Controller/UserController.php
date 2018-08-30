@@ -2,7 +2,9 @@
 namespace Controller;
 
 use Controller\MainController;
-use Model\SessionManager;
+use Model\Manager\SessionManager;
+use Model\Security\Security;
+use Model\Manager\UserManager;
 
 class UserController extends MainController
 {
