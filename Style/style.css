@@ -1,7 +1,7 @@
 @font-face
 {
-	font-family: 'Antenna';
-	src: url('fonts/ANTENNA.ttf');
+    font-family: 'Antenna';
+    src: url('fonts/ANTENNA.ttf');
 }
 
 html,body
@@ -11,74 +11,74 @@ height:100%;
 
 .post_image 
 {
-	height: 10%;
+    height: 10%;
 }
 
 
 #name
 {
-	font-style: bold;
-	font-size: 25px;
+    font-style: bold;
+    font-size: 25px;
 }
 
 
 #accroche
 {
-	font-style: italic;
+    font-style: italic;
 }
 
 #nav_head a
 {
-	font-size: 22px;
-	font-weight: normal;
-	text-decoration: none;
-	padding: 5px 5px 5px 5px;
-	transition: background 0.3s;
-	border-radius: 10px;
-	color: black;
+    font-size: 22px;
+    font-weight: normal;
+    text-decoration: none;
+    padding: 5px 5px 5px 5px;
+    transition: background 0.3s;
+    border-radius: 10px;
+    color: black;
 
 }
 
 #nav_head
 {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 #nav_head li
 {
-	margin-right: 10%;
+    margin-right: 10%;
 }
 
 #nav_head a:hover
 {
-	background: rgba(14,108,209,.8);
-	padding: 5px 5px 5px 5px;
-	font-size: 22px;
-	font-weight: normal;
-	text-decoration: none;
-	color: black;
+    background: rgba(14,108,209,.8);
+    padding: 5px 5px 5px 5px;
+    font-size: 22px;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
 }
 
 #wrapper h3
 {
-	font-family: 'Antenna', sans-serif;
+    font-family: 'Antenna', sans-serif;
 }
 
 #wrapper h2
 {
-	font-family: 'Antenna', sans-serif;
+    font-family: 'Antenna', sans-serif;
 }
 
 #wrapper h1
 {
-	font-family: 'Antenna', sans-serif;
+    font-family: 'Antenna', sans-serif;
 }
 
 #header_global
 {
-	margin-bottom: 50px;
-	background-color: #17B890;
-	margin:0;
+    margin-bottom: 50px;
+    background-color: #17B890;
+    margin:0;
 }
 
 #wrapper {
@@ -106,60 +106,60 @@ background-color: #17B890;
 
 .footer ul
 {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 .footer li
 {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 #content_block
 {
-	margin-top:  50px;
+    margin-top:  50px;
 }
 
 .footer_list a
 {
-	font-size: 18px;
-	font-weight: normal;
-	text-decoration: none;
-	transition: background 0.3s;
-	border-radius: 10px;
-	color: black;
-	padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    transition: background 0.3s;
+    border-radius: 10px;
+    color: black;
+    padding: 5px 5px 5px 5px;
 }
 
 .footer_list a:hover
 {
-	background: rgba(14,108,209,.8);
-	padding: 5px 5px 5px 5px;
-	font-size: 18px;
-	font-weight: normal;
-	text-decoration: none;
-	color: black;
+    background: rgba(14,108,209,.8);
+    padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
 
 }
 
 .username
 {
-	font-size: 18px;
-	font-weight: normal;
-	text-decoration: none;
-	color: black;
-	padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    padding: 5px 5px 5px 5px;
 }
 
 .post_global
 {
-	border: 2px inset black;
-	padding: 10px 10px 10px 10px;
-	border-radius: 10px;
-	box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+    border: 2px inset black;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
 }
 
 .com_global hr
 {
-	border: none;
-	border-bottom: 1px solid black;
+    border: none;
+    border-bottom: 1px solid black;
 }
 
