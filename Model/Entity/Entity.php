@@ -9,6 +9,6 @@ class Entity
         {
             $method = 'set' . ucfirst($key);
             $this->$method($value);
-        }   
+        }
     }
 }

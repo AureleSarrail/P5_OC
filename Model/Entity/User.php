@@ -53,32 +53,28 @@ class User extends Entity
 
     public function setName($name)
     {
-        if (is_string($name))
-        {
+        if (is_string($name)) {
             $this->name = $name;
         }
     }
 
     public function setFirstName($firstName)
     {
-        if (is_string($firstName))
-        {
+        if (is_string($firstName)) {
             $this->firstName = $firstName;
         }
     }
 
     public function setUsername($username)
     {
-        if (is_string($username))
-        {
+        if (is_string($username)) {
             $this->username = $username;
         }
     }
 
     public function setMail($mail)
     {
-        if (is_string($mail))
-        {
+        if (is_string($mail)) {
             $this->mail = $mail;
         }
     }

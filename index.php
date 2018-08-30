@@ -11,28 +11,21 @@ $control = new MainController();
 $userControl = new UserController();
 $postControl = new PostController();
 
-if (isset($_GET['action']))
-{
-    if (isset($_GET['postId']))
-    {
-        if ($_GET['action'] == 'onePost')
-        {
+if (isset($_GET['action'])) {
+    if (isset($_GET['postId'])) {
+        if ($_GET['action'] == 'onePost') {
             $control->onePost($_GET['postId']);
         }
     }
-    elseif ($_GET['action'] == 'listPost')
-    {
+    elseif ($_GET['action'] == 'listPost') {
         $control->listPost();
     }
-    elseif ($_GET['action'] == 'testConnect')
-    {
-        if (isset($_POST['mail']) && (isset($_POST['password'])))
-        {
+    elseif ($_GET['action'] == 'testConnect') {
+        if (isset($_POST['mail']) && (isset($_POST['password']))) {
             $control->connectionCheck($_POST['mail'], $_POST['password']);
         }
     }
-    elseif ($_GET['action'] == 'Connect')
-    {
+    elseif ($_GET['action'] == 'Connect') {
         $control->connectionPage();
     }
     elseif ($_GET['action'] == 'deconnect') {
@@ -43,20 +36,16 @@ if (isset($_GET['action']))
             $control->creationPostPage();
         }
     }
-    elseif ($_GET['action'] == 'createAccount') 
-    {
+    elseif ($_GET['action'] == 'createAccount') {
         $control->createAccountView();
     }
-    elseif ($_GET['action'] == 'createUser')
-    {
-        if (isset($_POST['firstName']) && isset($_POST['name']) && isset($_POST['username']) && isset($_POST['mail']) && isset($_POST['password']))
-        {
+    elseif ($_GET['action'] == 'createUser') {
+        if (isset($_POST['firstName']) && isset($_POST['name']) && isset($_POST['username']) && isset($_POST['mail']) && isset($_POST['password'])) {
             $control->createUser($_POST['firstName'],$_POST['name'],$_POST['username'],$_POST['mail'],$_POST['password']);
         }
         
     }
-    elseif ($_GET['action'] == 'postCreated')
-    {
+    elseif ($_GET['action'] == 'postCreated') {
         echo('ici');
         if (isset($_POST['title']) && isset($_POST['head']) && isset($_POST['image']) && isset($_POST['content'])) {
             echo('ou la');

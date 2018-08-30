@@ -53,8 +53,7 @@ class Comment extends Entity
 
     public function setContent($content)
     {
-        if(is_string($content))
-        {
+        if (is_string($content)) {
             $this->content = $content;
         }
     }
