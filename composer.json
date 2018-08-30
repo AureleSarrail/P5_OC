@@ -1,0 +1,10 @@
+{
+    "name": "xan/blog_asdev",
+    "description": "professionnal blog for asdev",
+    "require": {},
+
+    "autoload" : {
+    	"psr-4" : {"Model\\" : "Model",
+    				"Controller\\" : "Controller"}
+    }
+}

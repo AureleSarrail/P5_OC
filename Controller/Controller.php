@@ -1,32 +1,23 @@
-
 <?php
+namespace Controller;
 
-require_once('Model/Model.php');
+require('vendor/autoload.php');
 
-class Controller
+use Model\Manager\PostManager;
+use Model\Manager\CommentManager;
+use Model\Manager\UserManager;
+use Model\Security\Security;
+
+class MainController
 {
-	function homeView()
-	{
-		require('Views/home.php');
-	}
+    function homeView()
+    {
+        require('Views/home.php');
+    }
 
-	function listPost()
-	{
-		$postMod = new PostManager();
-
-		$posts = $postMod->getPosts();
-
-		require('Views/postsView.php');
-	}
-
-	function onePost($postId)
-	{
-		$postMod = new PostManager();
-		$comMod = new CommentManager();
-
-		$post = $postMod->onePost($postId);
-		$comments = $comMod->getComments($postId);
-
-		require('Views/onePostView.php');
-	}
+    function connectionPage()
+    {
+        require('Views/Connect.php');
+    }  
 }
+
