@@ -10,14 +10,13 @@ use Model\Security\Security;
 
 class MainController
 {
-    function homeView()
+    public function homeView()
     {
         require('Views/home.php');
     }
 
-    function connectionPage()
+    public function connectionPage()
     {
         require('Views/Connect.php');
-    }  
+    }
 }
-

@@ -4,46 +4,41 @@ namespace Controller;
 use Controller\MainController;
 use Model\SessionManager;
 
-Class UserController extends MainController
+class UserController extends MainController
 {
-    function createAccountView()
+    public function createAccountView()
     {
         require_once('Views/createAccountView.php');
     }
 
-    function createUser($firstname,$name,$username,$mail,$password)
+    public function createUser($firstname, $name, $username, $mail, $password)
     {
         $userSecurity = new Security();
         $testExist = $userSecurity->testExist($mail);
-        if ($testExist == 1)
-        {
+        if ($testExist == 1) {
             header('Location: Views/createAccountView.php?erreur=1');
         }
         
-        if ($testExist == 0)
-        {
+        if ($testExist == 0) {
             $userMan = new UserManager();
-            $userMan->createUser($firstname,$name,$username,$mail,$password);
+            $userMan->createUser($firstname, $name, $username, $mail, $password);
             $this->connect($mail);
         }
     }
 
-    function connectionCheck($mail,$password)
+    public function connectionCheck($mail, $password)
     {
         $userSecurity = new Security();
         $testExist = $userSecurity->testExist($mail);
-        if ($testExist == 1)
-        {
+        if ($testExist == 1) {
             $dbPass = $userSecurity->checkPassword($mail);
-            if (password_verify($password,$dbPass))
-            {
+            if (password_verify($password, $dbPass)) {
                 $this->connect($mail);
             }
         }
-
     }
 
-    function connect($mail)
+    public function connect($mail)
     {
         $userMod = new UserManager();
         $user = $userMod->getUser($mail);
@@ -52,7 +47,7 @@ Class UserController extends MainController
         require_once('Views/Home.php');
     }
 
-    function deconnection()
+    public function deconnection()
     {
         $_SESSION = array();
         session_destroy();
