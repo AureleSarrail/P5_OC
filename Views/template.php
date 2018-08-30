@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </footer>
-        <?php 
+        <?php
         } ?>
     </body>
 </html>
