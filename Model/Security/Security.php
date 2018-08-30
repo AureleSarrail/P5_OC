@@ -7,8 +7,8 @@ class Security extends Model
 {
     public function testExist($mail)
     {
-        $Db = $this->dbConnect();
-        $query = $Db->prepare('select count(*) as nb
+        $dataBase = $this->dbConnect();
+        $query = $dataBase->prepare('select count(*) as nb
                                from user
                                where mail = ?');
         $query->execute(array($mail));
@@ -20,8 +20,8 @@ class Security extends Model
 
     public function checkPassword($mail)
     {
-        $Db = $this->dbConnect();
-        $query = $Db->prepare('select password
+        $dataBase = $this->dbConnect();
+        $query = $dataBase->prepare('select password
                                from user
                                where mail = ?');
         $query->execute(array($mail));

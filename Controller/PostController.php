@@ -5,7 +5,7 @@ use Controller\MainController;
 
 class PostController extends MainController
 {
-	public function listPost()
+    public function listPost()
     {
         $postMod = new PostManager();
 

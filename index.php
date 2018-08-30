@@ -11,7 +11,7 @@ $control = new MainController();
 $userControl = new UserController();
 $postControl = new PostController();
 
-if(isset($_GET['action']))
+if (isset($_GET['action']))
 {
     if (isset($_GET['postId']))
     {
@@ -28,21 +28,18 @@ if(isset($_GET['action']))
     {
         if (isset($_POST['mail']) && (isset($_POST['password'])))
         {
-            $control->connectionCheck($_POST['mail'],$_POST['password']);
+            $control->connectionCheck($_POST['mail'], $_POST['password']);
         }
     }
     elseif ($_GET['action'] == 'Connect')
     {
         $control->connectionPage();
     }
-    elseif ($_GET['action'] == 'deconnect')
-    {
+    elseif ($_GET['action'] == 'deconnect') {
         $control->deconnection();
     }
-    elseif ($_GET['action'] == 'createPost')
-    {
-        if ($_SESSION['rights'] == 1)
-        {
+    elseif ($_GET['action'] == 'createPost') {
+        if ($_SESSION['rights'] == 1) {
             $control->creationPostPage();
         }
     }
@@ -61,11 +58,9 @@ if(isset($_GET['action']))
     elseif ($_GET['action'] == 'postCreated')
     {
         echo('ici');
-        if(isset($_POST['title']) && isset($_POST['head']) && isset($_POST['image']) && isset($_POST['content']))
-        {
+        if (isset($_POST['title']) && isset($_POST['head']) && isset($_POST['image']) && isset($_POST['content'])) {
             echo('ou la');
-            if(isset($_SESSION['userId']) && isset($_SESSION['username']) && isset($_SESSION['rights']))
-            {
+            if (isset($_SESSION['userId']) && isset($_SESSION['username']) && isset($_SESSION['rights'])) {
                 echo('et là');
                 $control->insertPost($_POST['title'],$_POST['head'],$_POST['image'],$_POST['content'],$_SESSION['userId'],$_SESSION['username'],$_SESSION['rights']);
             }
@@ -76,4 +71,3 @@ else
 {
     $control->homeView();
 }
-

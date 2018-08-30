@@ -7,8 +7,8 @@ class CommentManager extends Model
 {
     public function getComments($postId)
     {
-        $Db = $this->dbConnect();
-        $query = $Db->prepare('select a.IdCom,a.Content,a.CreationDate,a.Status,b.Username,a.PostId
+        $dataBase = $this->dbConnect();
+        $query = $dataBase->prepare('select a.IdCom,a.Content,a.CreationDate,a.Status,b.Username,a.PostId
                             from comment a,user b
                             where a.UserId = b.UserId
                             and a.PostId = ?');

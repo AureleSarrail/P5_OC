@@ -1,6 +1,7 @@
 <?php
 
 namespace Model\Entity;
+
 use Model\Entity\Entity;
 
 class Post extends Entity

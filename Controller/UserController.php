@@ -43,7 +43,7 @@ class UserController extends MainController
         $userMod = new UserManager();
         $user = $userMod->getUser($mail);
         $session = new SessionManager();
-        $session->defineSession($user->getUsername(),$user->getRights(),$user->getUserId());
+        $session->defineSession($user->getUsername(), $user->getRights(), $user->getUserId());
         require_once('Views/Home.php');
     }
 

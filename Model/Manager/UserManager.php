@@ -7,8 +7,8 @@ class UserManager extends Model
 {
     public function getUser($mail)
     {
-        $Db = $this->dbConnect();
-        $query = $Db->prepare('select userid,name,firstname,username,mail,rights
+        $dataBase = $this->dbConnect();
+        $query = $dataBase->prepare('select userid,name,firstname,username,mail,rights
                                from user
                                where mail = ?');
         $query->execute(array($mail));
@@ -20,7 +20,7 @@ class UserManager extends Model
 
     public function createUser($firstname,$name,$username,$mail,$password)
     {
-        $Db = $this->dbConnect();
+        $dataBase = $this->dbConnect();
         $user = new User();
         $data['firstname'] = htmlspecialchars($firstname);
         $data['name'] = htmlspecialchars($name);
@@ -28,7 +28,7 @@ class UserManager extends Model
         $data['mail'] = htmlspecialchars($mail);
         $pass = password_hash($password,PASSWORD_DEFAULT);
         $user->hydrate($data);
-        $insert = $Db->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) values (?,?,?,?,?,2)');
+        $insert = $dataBase->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) values (?,?,?,?,?,2)');
         $insert->execute(array($user->getName(),$user->getFirstName(),$user->getUsername(),$user->getMail(),$pass));
     }
 }

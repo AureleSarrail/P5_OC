@@ -1,8 +1,9 @@
 <?php
 namespace Model\Entity;
+
 use Model\Entity\Entity;
 
-class User Extends Entity
+class User extends Entity
 {
     private $userId;
     private $name;
@@ -52,7 +53,7 @@ class User Extends Entity
 
     public function setName($name)
     {
-        if(is_string($name))
+        if (is_string($name))
         {
             $this->name = $name;
         }
@@ -68,7 +69,7 @@ class User Extends Entity
 
     public function setUsername($username)
     {
-        if(is_string($username))
+        if (is_string($username))
         {
             $this->username = $username;
         }
@@ -76,7 +77,7 @@ class User Extends Entity
 
     public function setMail($mail)
     {
-        if(is_string($mail))
+        if (is_string($mail))
         {
             $this->mail = $mail;
         }
@@ -91,8 +92,7 @@ class User Extends Entity
 
     public function hydrate(array $data)
     {   
-        foreach ($data as $key => $value) 
-        {
+        foreach ($data as $key => $value) {
             $method = 'set' . ucfirst($key);
             $this->$method($value);
         }   

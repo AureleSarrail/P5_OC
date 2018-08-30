@@ -23,7 +23,8 @@
         <br>
         <p>Ici vous pourrez me suivre, voir mes derniers articles postés.</p>
         <br>
-        <p>Vous pourrez également me contacter via le formulaire de contact ou les réseaux sociaux, tant sur le plan professionnel que personnel.</p>
+        <p>Vous pourrez également me contacter via le formulaire de contact ou les réseaux sociaux, 
+        tant sur le plan professionnel que personnel.</p>
         <br>
         <p>Bonne visite à tous !</p>
         <br>
