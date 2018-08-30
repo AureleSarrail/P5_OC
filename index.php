@@ -43,7 +43,7 @@ if (isset($_GET['action'])) {
                 $_POST['name'],
                 $_POST['username'],
                 $_POST['mail'],
-                $_POST['password']);
+            $_POST['password']);
         }
     } elseif ($_GET['action'] == 'postCreated') {
         echo('ici');
@@ -63,7 +63,7 @@ if (isset($_GET['action'])) {
                     $_POST['content'],
                     $_SESSION['userId'],
                     $_SESSION['username'],
-                    $_SESSION['rights']);
+                $_SESSION['rights']);
             }
         }
     }
