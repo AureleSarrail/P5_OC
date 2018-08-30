@@ -33,12 +33,23 @@ if (isset($_GET['action'])) {
     } elseif ($_GET['action'] == 'createAccount') {
         $control->createAccountView();
     } elseif ($_GET['action'] == 'createUser') {
-        if (isset($_POST['firstName']) && isset($_POST['name']) && isset($_POST['username']) && isset($_POST['mail']) && isset($_POST['password'])) {
-            $control->createUser($_POST['firstName'], $_POST['name'], $_POST['username'], $_POST['mail'], $_POST['password']);
+        if (isset($_POST['firstName']) && 
+            isset($_POST['name']) && 
+            isset($_POST['username']) && 
+            isset($_POST['mail']) && 
+            isset($_POST['password'])) {
+            $control->createUser($_POST['firstName'],
+             $_POST['name'],
+              $_POST['username'],
+               $_POST['mail'],
+                $_POST['password']);
         }
     } elseif ($_GET['action'] == 'postCreated') {
         echo('ici');
-        if (isset($_POST['title']) && isset($_POST['head']) && isset($_POST['image']) && isset($_POST['content'])) {
+        if (isset($_POST['title']) && 
+            isset($_POST['head']) && 
+            isset($_POST['image']) && 
+            isset($_POST['content'])) {
             echo('ou la');
             if (isset($_SESSION['userId']) && isset($_SESSION['username']) && isset($_SESSION['rights'])) {
                 echo('et là');

@@ -96,15 +96,18 @@
                                 ?> <p class="col-lg-offset-3 col-lg-2 username">Bonjour <?= $_SESSION['username'] ?> !
                                     (<a href="index.php?action=deconnect">Deconnexion</a>)</p>
                             <?php
-                            } else {?>
+                            } else {
+                                ?>
                                 <li class="col-lg-offset-6 col-lg-1">
                                     <a href="index.php?action=Connect">Se connecter</a>
                                 </li> 
-                                <?php} ?>
+                                <?php
+                            } ?>
                         </ul>
                     </div>
                 </div>
             </footer>
-        <?php } ?>
+        <?php 
+        } ?>
     </body>
 </html>
