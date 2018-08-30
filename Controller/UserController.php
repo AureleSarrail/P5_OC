@@ -2,10 +2,11 @@
 namespace Controller;
 
 use Controller\MainController;
+use Model\SessionManager;
 
 Class UserController extends MainController
 {
-	function createAccountView()
+    function createAccountView()
     {
         require_once('Views/createAccountView.php');
     }
@@ -16,9 +17,10 @@ Class UserController extends MainController
         $testExist = $userSecurity->testExist($mail);
         if ($testExist == 1)
         {
-            require_once('Views/createAccountView.php?erreur=1');
+            header('Location: Views/createAccountView.php?erreur=1');
         }
-        else
+        
+        if ($testExist == 0)
         {
             $userMan = new UserManager();
             $userMan->createUser($firstname,$name,$username,$mail,$password);
@@ -34,9 +36,9 @@ Class UserController extends MainController
         {
             $dbPass = $userSecurity->checkPassword($mail);
             if (password_verify($password,$dbPass))
-                {
-                    $this->connect($mail);
-                }
+            {
+                $this->connect($mail);
+            }
         }
 
     }
@@ -45,9 +47,8 @@ Class UserController extends MainController
     {
         $userMod = new UserManager();
         $user = $userMod->getUser($mail);
-        $_SESSION['username'] = $user->getUsername();
-        $_SESSION['rights'] = $user->getRights();
-        $_SESSION['userId'] = $user->getUserId();
+        $session = new SessionManager();
+        $session->defineSession($user->getUsername(),$user->getRights(),$user->getUserId());
         require_once('Views/Home.php');
     }
 

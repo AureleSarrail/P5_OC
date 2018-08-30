@@ -3,9 +3,13 @@ session_start();
 
 // require_once('Controller/Controller.php');
 require('vendor/autoload.php');
-use Controller\Controller;
+use Controller\MainController;
+use Controller\PostController;
+use Controller\UserController;
 
-$control = new Controller();
+$control = new MainController();
+$userControl = new UserController();
+$postControl = new PostController();
 
 if(isset($_GET['action']))
 {
