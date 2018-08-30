@@ -1,12 +1,10 @@
 
 <?php $viewTitle = "Les Posts" ?>
 
-<?php ob_start(); 
+<?php ob_start();
 
-foreach ($posts as $post) 
-{
+foreach ($posts as $post) {
     ?>
-
     <div class="row">
         <div class="col-lg-offset-3 col-lg-6 post_global">
                 <img class="col-lg-3 img-responsive" src="<?= $post->getImage(); ?>" alt="image_post">

@@ -5,7 +5,6 @@ namespace Model\Manager;
 require('vendor/autoload.php');
 use \Model\Entity\Post;
 
-
 class PostManager extends Model
 {
     public function getPosts()
@@ -17,8 +16,7 @@ class PostManager extends Model
                                     where a.UserId = b.UserId
                                     order by a.postid limit 10');
         $posts = [];
-        while ($data = $result->fetch(\PDO::FETCH_ASSOC))
-        {
+        while ($data = $result->fetch(\PDO::FETCH_ASSOC)) {
             $post = new Post();
             $post->hydrate($data);
             $Posts[] = $post;
@@ -41,7 +39,7 @@ class PostManager extends Model
         return $post;
     }
 
-    public function insertPost($title,$head,$image,$content,$userId,$username)
+    public function insertPost($title, $head, $image, $content, $userId, $username)
     {
         $dataBase = $this->dbConnect();
         $data = compact("title","head","image","content","userId","username");

@@ -18,7 +18,7 @@ class UserManager extends Model
         return $user;
     }
 
-    public function createUser($firstname,$name,$username,$mail,$password)
+    public function createUser($firstname, $name, $username, $mail, $password)
     {
         $dataBase = $this->dbConnect();
         $user = new User();
@@ -28,7 +28,8 @@ class UserManager extends Model
         $data['mail'] = htmlspecialchars($mail);
         $pass = password_hash($password,PASSWORD_DEFAULT);
         $user->hydrate($data);
-        $insert = $dataBase->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) values (?,?,?,?,?,2)');
+        $insert = $dataBase->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) 
+                                    values (?,?,?,?,?,2)');
         $insert->execute(array($user->getName(),$user->getFirstName(),$user->getUsername(),$user->getMail(),$pass));
     }
 }

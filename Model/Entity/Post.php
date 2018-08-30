@@ -81,32 +81,28 @@ class Post extends Entity
 
     public function setTitle($title)
     {
-        if(is_string($title))
-        {
+        if (is_string($title)) {
             $this->title = $title;
         }
     }
 
     public function setHead($head)
     {
-        if(is_string($head))
-        {
+        if (is_string($head)) {
             $this->head = $head;
         }
     }
 
     public function setImage($image)
     {
-        if(is_string($image))
-        {
+        if (is_string($image)) {
             $this->image = $image;
         }
     }
 
     public function setContent($content)
     {
-        if(is_string($content))
-        {
+        if (is_string($content)) {
             $this->content = $content;
         }
     }

@@ -26,8 +26,7 @@ class Security extends Model
                                where mail = ?');
         $query->execute(array($mail));
         $data = $query->fetch(\PDO::FETCH_ASSOC);
-        foreach ($data as $key => $value) 
-        {
+        foreach ($data as $key => $value) {
             $pass = $value;
         }
         return $pass;

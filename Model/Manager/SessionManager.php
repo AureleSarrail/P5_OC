@@ -1,9 +1,9 @@
 <?php
 namespace Model\Manager;
 
-Class SessionManager
+class SessionManager
 {
-    function defineSession($username,$rights,$userId)
+    public function defineSession($username,$rights,$userId)
     {
         $_SESSION['username'] = $username;
         $_SESSION['rights'] = $rights;

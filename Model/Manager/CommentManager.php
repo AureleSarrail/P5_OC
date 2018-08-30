@@ -14,8 +14,7 @@ class CommentManager extends Model
                             and a.PostId = ?');
         $query->execute(array($postId));
         $comments = [];
-        while ($data = $query->fetch(\PDO::FETCH_ASSOC))
-        {
+        while ($data = $query->fetch(\PDO::FETCH_ASSOC)) {
             $comment = new Comment();
             $comment->hydrate($data);
             $comments[] = $comment;
