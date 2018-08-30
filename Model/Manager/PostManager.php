@@ -42,11 +42,15 @@ class PostManager extends Model
     public function insertPost($title, $head, $image, $content, $userId, $username)
     {
         $dataBase = $this->dbConnect();
-        $data = compact("title","head","image","content","userId","username");
+        $data = compact("title", "head", "image", "content", "userId", "username");
         $post = new Post();
         $post->hydrate($data);
         $insert = $dataBase->prepare('insert into post (title,head,image,content,LastModif,creatdate,userid) 
                                     values (?,?,?,?,CURRENT_DATE,CURRENT_DATE,?)');
-        $insert->execute(array($post->getTitle(),$post->getHead(),$post->getImage(),$post->getContent(),$post->getUserId()));
+        $insert->execute(array($post->getTitle(),
+            $post->getHead(),
+            $post->getImage(),
+            $post->getContent(),
+            $post->getUserId()));
     }
 }

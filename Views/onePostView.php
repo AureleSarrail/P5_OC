@@ -20,7 +20,7 @@ ob_start(); ?>
 <br>
 <br>
 
-<?php 
+<?php
 
 foreach ($comments as $com) {
     ?>

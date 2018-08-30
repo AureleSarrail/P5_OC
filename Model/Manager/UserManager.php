@@ -26,10 +26,10 @@ class UserManager extends Model
         $data['name'] = htmlspecialchars($name);
         $data['username'] = htmlspecialchars($username);
         $data['mail'] = htmlspecialchars($mail);
-        $pass = password_hash($password,PASSWORD_DEFAULT);
+        $pass = password_hash($password, PASSWORD_DEFAULT);
         $user->hydrate($data);
         $insert = $dataBase->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) 
                                     values (?,?,?,?,?,2)');
-        $insert->execute(array($user->getName(),$user->getFirstName(),$user->getUsername(),$user->getMail(),$pass));
+        $insert->execute(array($user->getName(), $user->getFirstName(), $user->getUsername(), $user->getMail(), $pass));
     }
 }

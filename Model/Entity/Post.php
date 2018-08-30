@@ -121,5 +121,4 @@ class Post extends Entity
     {
         $this->username = $username;
     }
-
 }

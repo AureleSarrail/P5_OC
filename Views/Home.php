@@ -19,7 +19,9 @@
         <br>
         <p>Dans ce Blog, j'essaierai de vous faire suivre mes projets, mes avancements.</p>
         <br>
-        <p>Si vous souhaitez parcourir mon Cv, il est en téléchargement en cliquant <a href="files/cv.pdf">ici</a>.</p>
+        <p>Si vous souhaitez parcourir mon Cv, il est en téléchargement en cliquant 
+            <a href="files/cv.pdf">ici</a>.
+        </p>
         <br>
         <p>Ici vous pourrez me suivre, voir mes derniers articles postés.</p>
         <br>

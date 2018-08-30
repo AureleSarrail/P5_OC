@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </footer>
-        <?php 
+        <?php
         } elseif (isset($_SESSION['username'])) {
             ?>
             <footer id="footer" class="footer col-lg-12">
@@ -96,12 +96,11 @@
                                 ?> <p class="col-lg-offset-3 col-lg-2 username">Bonjour <?= $_SESSION['username'] ?> !
                                     (<a href="index.php?action=deconnect">Deconnexion</a>)</p>
                             <?php
-                            } else {
-                                ?><li class="col-lg-offset-6 col-lg-1">
+                            } else {?>
+                                <li class="col-lg-offset-6 col-lg-1">
                                     <a href="index.php?action=Connect">Se connecter</a>
                                 </li> 
-                                <?php
-                            }?>
+                                <?php} ?>
                         </ul>
                     </div>
                 </div>
