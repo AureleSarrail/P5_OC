@@ -60,8 +60,8 @@ if (isset($_GET['action'])) {
                     $_POST['content'],
                     $_SESSION['userId'],
                     $_SESSION['username'],
-                $_SESSION['rights']
-            );
+                    $_SESSION['rights']
+                );
             }
         }
     } elseif ($_GET['action'] == 'modifyPost') {
@@ -74,13 +74,15 @@ if (isset($_GET['action'])) {
         isset($_POST['head']) &&
         isset($_POST['image']) &&
         isset($_POST['content'])) {
-            $postControl->updatePost($_GET['postId'],
-            $_POST['title'],
-            $_POST['head'],
-            $_POST['image'],
-            $_POST['content']);
+            $postControl->updatePost(
+                $_GET['postId'],
+                $_POST['title'],
+                $_POST['head'],
+                $_POST['image'],
+                $_POST['content']
+            );
         }
-    } elseif($_GET['action'] == 'deletePost') {
+    } elseif ($_GET['action'] == 'deletePost') {
         if (isset($_GET['postId'])) {
             $postControl->deletePost($_GET['postId']);
         }

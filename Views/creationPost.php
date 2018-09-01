@@ -8,7 +8,8 @@ if (isset($post)) { ?>
         <div class="form-group">
             <form action="index.php?action=postUpdated&amp;postId=<?= $post->getPostId() ?>" method="POST">
                 <label for="Title">Le titre : </label>
-                <input type="text"  name="title" id="Title" maxlength="255" size="100" value="<?= $post->getTitle() ?>"><br>
+                <input type="text"  name="title" id="Title" maxlength="255" size="100" value="<?= $post->getTitle() ?>">
+                <br>
                 <label for="Head">Le chapeau : </label>
                 <input type="text" name="head" id="Head" maxlength="255" size="100" value="<?= $post->getHead() ?>"><br>
                 <label for="Image">L'URL de l'image : </label>
