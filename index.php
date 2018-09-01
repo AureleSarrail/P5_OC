@@ -11,8 +11,8 @@ $userControl = new UserController();
 $postControl = new PostController();
 
 if (isset($_GET['action'])) {
-    if (isset($_GET['postId'])) {
-        if ($_GET['action'] == 'onePost') {
+    if ($_GET['action'] == 'onePost') {
+        if (isset($_GET['postId'])) {
             $postControl->onePost($_GET['postId']);
         }
     } elseif ($_GET['action'] == 'listPost') {
@@ -42,7 +42,8 @@ if (isset($_GET['action'])) {
                 $_POST['name'],
                 $_POST['username'],
                 $_POST['mail'],
-            $_POST['password']);
+                $_POST['password']
+            );
         }
     } elseif ($_GET['action'] == 'postCreated') {
         if (isset($_POST['title']) &&
@@ -59,14 +60,29 @@ if (isset($_GET['action'])) {
                     $_POST['content'],
                     $_SESSION['userId'],
                     $_SESSION['username'],
-                $_SESSION['rights']);
+                $_SESSION['rights']
+            );
             }
         }
     } elseif ($_GET['action'] == 'modifyPost') {
-        echo('là');
         if (isset($_GET['postId'])) {
-            echo ('on est là');
             $postControl->modifyPost($_GET['postId']);
+        }
+    } elseif ($_GET['action'] == 'postUpdated') {
+        if (isset($_GET['postId']) &&
+        isset($_POST['title']) &&
+        isset($_POST['head']) &&
+        isset($_POST['image']) &&
+        isset($_POST['content'])) {
+            $postControl->updatePost($_GET['postId'],
+            $_POST['title'],
+            $_POST['head'],
+            $_POST['image'],
+            $_POST['content']);
+        }
+    } elseif($_GET['action'] == 'deletePost') {
+        if (isset($_GET['postId'])) {
+            $postControl->deletePost($_GET['postId']);
         }
     }
 } else {

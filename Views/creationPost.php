@@ -6,7 +6,7 @@ if (isset($post)) { ?>
 <div class="row">
     <div class="col-lg-offset-3 col-lg-6">
         <div class="form-group">
-            <form action="index.php?action=postUpdated" method="POST">
+            <form action="index.php?action=postUpdated&amp;postId=<?= $post->getPostId() ?>" method="POST">
                 <label for="Title">Le titre : </label>
                 <input type="text"  name="title" id="Title" maxlength="255" size="100" value="<?= $post->getTitle() ?>"><br>
                 <label for="Head">Le chapeau : </label>
@@ -14,7 +14,7 @@ if (isset($post)) { ?>
                 <label for="Image">L'URL de l'image : </label>
                 <input type="text" name="image" id="Image" maxlength="255" size="100" value="<?= $post->getImage() ?>"><br>
                 <label for="Content">Le contenu : </label>
-                <textarea name="content" id="Content" rows="10" cols="100" value="<?= $post->getContent() ?>"></textarea><br>
+                <textarea name="content" id="Content" rows="10" cols="100"><?= $post->getContent() ?></textarea><br>
                 <div class="row">
                     <input type="submit" class="col-lg-offset-5 col-lg-2 text-center">
                 </div>
@@ -22,7 +22,8 @@ if (isset($post)) { ?>
         </div>
     </div>
 </div>
-<?php } else {
+<?php 
+} else {
 ?>
 <div class="row">
     <div class="col-lg-offset-3 col-lg-6">
@@ -44,6 +45,7 @@ if (isset($post)) { ?>
     </div>
 </div>
 <?php
+}
 
 $viewContent = ob_get_clean();
 

@@ -2,7 +2,6 @@
 
 namespace Model\Manager;
 
-require('vendor/autoload.php');
 use \Model\Entity\Post;
 
 class PostManager extends Model
@@ -52,5 +51,26 @@ class PostManager extends Model
             $post->getImage(),
             $post->getContent(),
             $post->getUserId()));
+    }
+
+    public function updatePost($postId, $title, $head, $image, $content)
+    {
+        $dataBase = $this->dbConnect();
+        $data = compact("postId", "title", "head", "image", "content");
+        $post = new Post();
+        // return $data;
+        $post->hydrate($data);
+        $update = $dataBase->prepare('update post
+                                      set title = ?, head = ?, image = ?, content = ?, LastModif = CURRENT_DATE
+                                      where postid = ?');
+        $update->execute(array($post->getTitle(),$post->getHead(),$post->getImage(),$post->getContent(),$post->getpostId()));
+        return $postId;
+    }
+
+    public function deletePost($postId)
+    {
+        $dataBase = $this->dbConnect();
+        $delete = $dataBase->prepare('delete from post where postId = ?');
+        $delete->execute(array($postId));
     }
 }

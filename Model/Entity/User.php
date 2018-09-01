@@ -83,14 +83,4 @@ class User extends Entity
     {
         $this->rights = (int) $rights;
     }
-
-    // HYDRATE
-
-    public function hydrate(array $data)
-    {
-        foreach ($data as $key => $value) {
-            $method = 'set' . ucfirst($key);
-            $this->$method($value);
-        }
-    }
 }

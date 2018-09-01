@@ -37,14 +37,27 @@ class PostController extends MainController
 
     public function creationPostPage()
     {
-        require_once('Views/CreationPost.php');
+        require_once('Views/creationPost.php');
     }
 
     public function modifyPost($postId)
     {
         $postMan = new PostManager();
-        $postMan->onePost($postId);
+        $post = $postMan->onePost($postId);
+        require('Views/creationPost.php');
+    }
 
-        $this->creationPostPage();
+    public function updatePost($postId, $title, $head, $image, $content)
+    {
+        $postMan = new PostManager();
+        $postMan->updatePost($postId, $title, $head, $image, $content);
+        header('Location: index.php?action=onePost&postId=' . $postId);
+    }
+
+    public function deletePost($postId)
+    {
+        $postMan = new PostManager();
+        $postMan->deletePost($postId);
+        header('Location: index.php?action=listPost');
     }
 }

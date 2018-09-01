@@ -9,7 +9,7 @@ ob_start(); ?>
         <h1 class="col-lg-9"><?= $post->getTitle() ?></h1>
         <h3 class="col-lg-12"><?= $post->getHead() ?></h3>
         <div class="row">       
-            <p class="col-lg-12"><?= $post->getContent() ?></p>
+            <p class="col-lg-12"><?= nl2br($post->getContent()) ?></p>
             <em><p class="col-lg-12">Créé par <strong><?= $post->getUsername() ?></strong> 
                     le <strong><?= substr($post->getCreatDate(), -2); ?>/
                         <?= substr($post->getCreatDate(), 5, 2); ?>/
@@ -17,7 +17,8 @@ ob_start(); ?>
         </div>
         <?php 
         if (isset($_SESSION['rights'])) {
-            ?> <a href="index.php?action=modifyPost&amp;postId=<?= $post->getPostId() ?>">(Modifier)</a> <?php
+            ?> <a href="index.php?action=modifyPost&amp;postId=<?= $post->getPostId() ?>">[Modifier]</a>  
+            <a href="index.php?action=deletePost&amp;postId=<?= $post->getPostId() ?>">[Supprimer]</a> <?php
         } ?>
     </div>
 </div>
@@ -36,7 +37,7 @@ foreach ($comments as $com) {
                     <?= substr($com->getCreationDate(), 0, 4); ?>
                 </strong>
             </p>
-            <p class="col-lg-12"><?= $com->getContent() ?></p>
+            <p class="col-lg-12"><?= nl2br($com->getContent()) ?></p>
             <br>
             <br>
             <hr>
