@@ -5,10 +5,12 @@ require('vendor/autoload.php');
 use Controller\MainController;
 use Controller\PostController;
 use Controller\UserController;
+use Controller\ComController;
 
 $control = new MainController();
 $userControl = new UserController();
 $postControl = new PostController();
+$comControl = new ComController();
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'onePost') {
@@ -85,6 +87,29 @@ if (isset($_GET['action'])) {
     } elseif ($_GET['action'] == 'deletePost') {
         if (isset($_GET['postId'])) {
             $postControl->deletePost($_GET['postId']);
+        }
+    } elseif ($_GET['action'] == 'insertCom') {
+        if (isset($_POST['content']) &&
+        isset($_GET['postId']) &&
+        isset($_SESSION['userId'])) {
+            echo('ici');
+            $comControl->insertCom($_GET['postId'],$_POST['content'],$_SESSION['userId']);
+        }
+    } elseif ($_GET['action'] == 'adminCom') {
+        if (isset($_SESSION['rights'])) {
+            if ($_SESSION['rights'] == 1) {
+                $comControl->getAwaitingComments();
+            }
+        }
+    } elseif ($_GET['action'] == 'validCom') {
+        if (isset($_GET['comId'])) {
+            $comControl->validCom($_GET['comId']);
+        }
+    } elseif ($_GET['action'] == 'deleteCom') {
+        if (isset($_SESSION['rights'])) {
+            if ($_SESSION['rights'] == 1) {
+                $comControl->deleteCom($_GET['comId']);
+            }
         }
     }
 } else {

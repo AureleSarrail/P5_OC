@@ -3,6 +3,12 @@
 
 ob_start(); ?>
 
+<?php
+if (isset($alert)) {
+    echo($alert);
+}
+?>
+
 <div class="row">
     <div class="col-lg-offset-3 col-lg-6 post_global">
         <img class="col-lg-3 img-responsive" src="<?= $post->getImage() ?>" alt="image_post">
@@ -46,6 +52,19 @@ foreach ($comments as $com) {
 
     <?php
 }
+
+if (isset($_SESSION['rights'])) {
+    ?> <div class="row">
+        <div class="form-group">
+            <form action="index.php?action=insertCom&amp;postId=<?= $post->getPostId() ?>" method="POST">
+                <div class="col-lg-offset-3 col-lg-6">
+                    <textarea class="col-lg-12" name="content" id="Content" cols="30" rows="2">Votre commentaire ici</textarea>
+                    <input class="col-lg-offset-5 col-lg-2" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>  
+<?php }
 
 ?>
 
