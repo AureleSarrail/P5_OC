@@ -10,6 +10,7 @@ class Comment extends Entity
     private $creationDate;
     private $status;
     private $username;
+    private $userId;
     private $postId;
 
     // GETTERS
@@ -44,6 +45,11 @@ class Comment extends Entity
         return $this->postId;
     }
 
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
     // SETTERS
 
     public function setIdCom($idCom)
@@ -76,5 +82,10 @@ class Comment extends Entity
     public function setPostId($postId)
     {
         $this->postId = (int) $postId;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->userId = (int) $userId;
     }
 }

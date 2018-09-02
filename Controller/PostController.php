@@ -22,7 +22,7 @@ class PostController extends MainController
         $comMod = new CommentManager();
 
         $post = $postMod->onePost($postId);
-        $comments = $comMod->getComments($postId);
+        $comments = $comMod->getValidComments($postId);
 
         require('Views/onePostView.php');
     }
