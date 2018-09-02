@@ -51,4 +51,21 @@ class CommentManager extends Model
         }
         return $comments;
     }
+
+    public function validCom($comId)
+    {
+        $dataBase = $this->dbConnect();
+        $update = $dataBase->prepare('update comment
+                                      set status = 1
+                                      where idcom = ?');
+        $update->execute(array($comId));
+    }
+
+    public function deleteCom($comId)
+    {
+        $dataBase = $this->dbConnect();
+        $update = $dataBase->prepare('delete from comment
+                                      where idcom = ?');
+        $update->execute(array($comId));
+    }
 }

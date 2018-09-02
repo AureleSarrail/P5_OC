@@ -95,6 +95,22 @@ if (isset($_GET['action'])) {
             echo('ici');
             $comControl->insertCom($_GET['postId'],$_POST['content'],$_SESSION['userId']);
         }
+    } elseif ($_GET['action'] == 'adminCom') {
+        if (isset($_SESSION['rights'])) {
+            if ($_SESSION['rights'] == 1) {
+                $comControl->getAwaitingComments();
+            }
+        }
+    } elseif ($_GET['action'] == 'validCom') {
+        if (isset($_GET['comId'])) {
+            $comControl->validCom($_GET['comId']);
+        }
+    } elseif ($_GET['action'] == 'deleteCom') {
+        if (isset($_SESSION['rights'])) {
+            if ($_SESSION['rights'] == 1) {
+                $comControl->deleteCom($_GET['comId']);
+            }
+        }
     }
 } else {
     $control->homeView();

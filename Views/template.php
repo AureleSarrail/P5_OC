@@ -85,7 +85,7 @@
                                     <a href="index.php?action=createPost">Creation posts</a>
                                 </li>
                                 <li class="col-lg-2">
-                                    <a href="AdminCom.php">Gestion Com</a>
+                                    <a href="index.php?action=adminCom">Gestion Com</a>
                                 </li>
                                 <li class="col-lg-2">
                                     <a href="#AdminUser.php">Gestion Utilisateurs</a>
