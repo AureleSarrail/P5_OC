@@ -22,7 +22,7 @@ if (isset($alert)) {
                         <?= substr($post->getCreatDate(), 0, 4); ?></strong></p></em>
         </div>
         <?php
-        if (isset($_SESSION['rights'])) {
+        if (isset($_SESSION['rights']) && ($_SESSION['rights'] == 1)) {
             ?> <a href="index.php?action=modifyPost&amp;postId=<?= $post->getPostId() ?>">[Modifier]</a>  
             <a href="index.php?action=deletePost&amp;postId=<?= $post->getPostId() ?>">[Supprimer]</a> <?php
         } ?>

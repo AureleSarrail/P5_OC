@@ -92,7 +92,6 @@ if (isset($_GET['action'])) {
         if (isset($_POST['content']) &&
         isset($_GET['postId']) &&
         isset($_SESSION['userId'])) {
-            echo('ici');
             $comControl->insertCom($_GET['postId'], $_POST['content'], $_SESSION['userId']);
         }
     } elseif ($_GET['action'] == 'adminCom') {
@@ -103,7 +102,9 @@ if (isset($_GET['action'])) {
         }
     } elseif ($_GET['action'] == 'validCom') {
         if (isset($_GET['comId'])) {
-            $comControl->validCom($_GET['comId']);
+            if (isset($_SESSION['rights']) && ($_SESSION['rights'] == 1)) {
+                $comControl->validCom($_GET['comId']);    
+            }
         }
     } elseif ($_GET['action'] == 'deleteCom') {
         if (isset($_SESSION['rights'])) {

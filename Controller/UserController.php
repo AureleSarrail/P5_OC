@@ -46,7 +46,7 @@ class UserController extends MainController
         $user = $userMod->getUser($mail);
         $session = new SessionManager();
         $session->defineSession($user->getUsername(), $user->getRights(), $user->getUserId());
-        require_once('Views/Home.php');
+        require_once('Views/home.php');
     }
 
     public function deconnection()

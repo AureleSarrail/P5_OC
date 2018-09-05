@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS comment;
-CREATE TABLE IF NOT EXISTS comment (
+CREATE TABLE comment (
   IdCom int(11) NOT NULL AUTO_INCREMENT,
   Content varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   CreationDate date NOT NULL,

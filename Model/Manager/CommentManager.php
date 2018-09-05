@@ -33,6 +33,7 @@ class CommentManager extends Model
         $data = compact("postId", "content", "userId");
         $com->hydrate($data);
         $insert->execute(array($com->getContent(), $com->getUserId(), $com->getPostId()));
+        return $postId;
     }
 
     public function getAwaitingComments()

@@ -9,7 +9,7 @@ class ComController extends MainController
     {
         $comManager = new CommentManager();
         $comManager->insertCom($postId, $content, $userId);
-        $alert = 'Le commentaire est bien enregistré, il est en attente de validation.';
+        // $alert = 'Le commentaire est bien enregistré, il est en attente de validation.';
         header('Location: index.php?action=onePost&postId=' . $postId);
     }
 
