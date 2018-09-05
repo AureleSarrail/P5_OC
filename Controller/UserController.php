@@ -76,4 +76,11 @@ class UserController extends MainController
         $user = $userMod->userDetails($userId);
         require_once('Views/userDetails.php');
     }
+
+    public function mail($name, $firstname, $mailContent, $mail)
+    {
+        $userMod = new UserManager();
+        $mail = $userMod->mail($name, $firstname, $mailContent, $mail);
+        require_once('Views/home.php');
+    }
 }

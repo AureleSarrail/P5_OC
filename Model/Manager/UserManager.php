@@ -64,4 +64,14 @@ class UserManager extends Model
         $user->hydrate($data);
         return $user;
     }
+
+    public function mail($name, $firstname, $mailContent, $mail)
+    {
+        $to = 'aurele.sarrail@gmail.com';
+        $subject = 'Mail de' . $name . $firstname;
+        $message = $mailContent;
+        $headers = 'From ' . $mail;
+
+        mail($to, $subject, $message, $headers);
+    }
 }

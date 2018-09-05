@@ -135,6 +135,13 @@ if (isset($_GET['action'])) {
         }
     } elseif ($_GET['action'] == 'contactUs') {
         $control->contactUs();
+    } elseif ($_GET['action'] == 'mail') {
+        if (isset($_POST['name']) &&
+        isset($_POST['firstname']) &&
+        isset($_POST['mailContent']) &&
+        isset($_POST['mail'])) {
+            $userControl->mail($_POST['name'], $_POST['firstname'], $_POST['mailContent'], $_POST['mail']);
+        }
     }
 } else {
     $control->homeView();
