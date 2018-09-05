@@ -12,6 +12,8 @@ You also have to modify your access to database in the file Model/Manager/Model.
 This file contain only one method for dbConnect.
 All you have to do is to edit it and replace <host>, <dbname>, <user> and <password> with you own.
   
+if you want to see it running, you can go to www.as-dev.fr.
+  
 To launch the application, load in your browser the file index.php and you are good to go.
 
 Note that the application is going to evolve in the next days/months so stay tune to that page if you want to know about the modifications.
