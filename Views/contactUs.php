@@ -19,7 +19,10 @@ ob_start();
             <div class="form-row">
                 <div class="form-group col-lg-12">
                     <label for="exampleFormControlInput1">Votre mail</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nom.prenom@exemple.com">
+                    <input type="email" 
+                        class="form-control" 
+                        id="exampleFormControlInput1" 
+                        placeholder="nom.prenom@exemple.com">
                 </div>
             </div>
             <div class="form-row">
