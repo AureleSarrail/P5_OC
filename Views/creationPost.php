@@ -5,7 +5,7 @@ ob_start();
 if (isset($post)) { ?>
 <div class="row">
     <div class="col-lg-offset-3 col-lg-6">
-        <form action="index.php?action=postUpdated&amp;postId=<?= $post->getPostId() ?>" method="POST">
+        <form action="index.php?action=postUpdated&amp;postId=<?= htmlspecialchars($post->getPostId()) ?>" method="POST">
             <div class="form-row">
                 <div class="form-group col-lg-12">
                     <label for="Title">Le titre</label>
@@ -15,7 +15,7 @@ if (isset($post)) { ?>
                         id="Title" 
                         maxlength="255" 
                         size="100" 
-                        value="<?= $post->getTitle() ?>">
+                        value="<?= htmlspecialchars($post->getTitle()) ?>">
                 </div>
                 <div class="form-group col-lg-12">
                     <label for="Head">Le chapeau</label>
@@ -25,7 +25,7 @@ if (isset($post)) { ?>
                         id="Head" 
                         maxlength="255" 
                         size="100" 
-                        value="<?= $post->getHead() ?>">
+                        value="<?= htmlspecialchars($post->getHead()) ?>">
                 </div>
                 <div class="form-group col-lg-12">
                     <label for="Image">L'URL de l'image</label>
@@ -35,7 +35,7 @@ if (isset($post)) { ?>
                         id="Image" 
                         maxlength="255" 
                         size="100" 
-                        value="<?= $post->getImage() ?>">
+                        value="<?= htmlspecialchars($post->getImage()) ?>">
                 </div>
                 <div class="form-group col-lg-12">
                     <label for="Content">Le contenu</label>
@@ -43,7 +43,7 @@ if (isset($post)) { ?>
                         class="form-control" 
                         id="Content" 
                         rows="10" 
-                        cols="100"><?= nl2br($post->getContent()) ?></textarea>
+                        cols="100"><?= htmlspecialchars(nl2br($post->getContent())) ?></textarea>
                 </div>
                 <div class="row">
                     <input type="submit" class="col-lg-offset-5 col-lg-2 text-center">

@@ -12,14 +12,14 @@ if (isset($alert)) {
 <div class="row">
     <div class="col-lg-offset-3 col-lg-6 post_global">
         <img class="col-lg-3 img-responsive" src="<?= $post->getImage() ?>" alt="image_post">
-        <h1 class="col-lg-9"><?= $post->getTitle() ?></h1>
-        <h3 class="col-lg-12"><?= $post->getHead() ?></h3>
+        <h1 class="col-lg-9"><?= htmlspecialchars($post->getTitle()) ?></h1>
+        <h3 class="col-lg-12"><?= htmlspecialchars($post->getHead()) ?></h3>
         <div class="row">       
-            <p class="col-lg-12"><?= nl2br($post->getContent()) ?></p>
-            <em><p class="col-lg-12">Créé par <strong><?= $post->getUsername() ?></strong> 
-                    le <strong><?= substr($post->getCreatDate(), -2); ?>/
-                        <?= substr($post->getCreatDate(), 5, 2); ?>/
-                        <?= substr($post->getCreatDate(), 0, 4); ?></strong></p></em>
+            <p class="col-lg-12"><?= nl2br(htmlspecialchars($post->getContent())) ?></p>
+            <em><p class="col-lg-12">Créé par <strong><?= htmlspecialchars($post->getUsername()) ?></strong> 
+                    le <strong><?= substr(htmlspecialchars($post->getCreatDate()), -2); ?>/
+                        <?= substr(htmlspecialchars($post->getCreatDate()), 5, 2); ?>/
+                        <?= substr(htmlspecialchars($post->getCreatDate()), 0, 4); ?></strong></p></em>
         </div>
         <?php
         if (isset($_SESSION['rights']) && ($_SESSION['rights'] == 1)) {
@@ -37,13 +37,13 @@ foreach ($comments as $com) {
     ?>
     <div class="row">
         <div class="col-lg-offset-3 col-lg-6 com_global">
-            <p class="col-lg-12">Commentaire de <strong><?= $com->getUsername() ?></strong> le 
-                <strong><?= substr($com->getCreationDate(), -2); ?>/
-                    <?= substr($com->getCreationDate(), 5, 2); ?>/
-                    <?= substr($com->getCreationDate(), 0, 4); ?>
+            <p class="col-lg-12">Commentaire de <strong><?= htmlspecialchars($com->getUsername()) ?></strong> le 
+                <strong><?= substr(htmlspecialchars($com->getCreationDate()), -2); ?>/
+                    <?= substr(htmlspecialchars($com->getCreationDate()), 5, 2); ?>/
+                    <?= substr(htmlspecialchars($com->getCreationDate()), 0, 4); ?>
                 </strong>
             </p>
-            <p class="col-lg-12"><?= nl2br($com->getContent()) ?></p>
+            <p class="col-lg-12"><?= nl2br(htmlspecialchars($com->getContent())) ?></p>
             <br>
             <br>
             <hr>

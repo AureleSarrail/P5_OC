@@ -16,17 +16,18 @@ else {
         ?> 
         <div class="row">
             <div class="col-lg-offset-3 col-lg-6">
-                 <p class="col-lg-12">Commentaire de <strong><?= $com->getUsername() ?></strong> le <strong>
-                        <?= substr($com->getCreationDate(), -2); ?>/
-                        <?= substr($com->getCreationDate(), 5, 2); ?>/
-                        <?= substr($com->getCreationDate(), 0, 4); ?>
+                 <p class="col-lg-12">Commentaire de <strong>
+                        <?= htmlspecialchars($com->getUsername()) ?></strong> le <strong>
+                        <?= substr(htmlspecialchars($com->getCreationDate()), -2); ?>/
+                        <?= substr(htmlspecialchars($com->getCreationDate()), 5, 2); ?>/
+                        <?= substr(htmlspecialchars($com->getCreationDate()), 0, 4); ?>
                     </strong>
                 </p>
-                <p class="col-lg-12"><?= nl2br($com->getContent()) ?></p>
-                <a href="index.php?action=validCom&amp;comId=<?= $com->getIdCom() ?>">
+                <p class="col-lg-12"><?= htmlspecialchars(nl2br($com->getContent())) ?></p>
+                <a href="index.php?action=validCom&amp;comId=<?= htmlspecialchars($com->getIdCom()) ?>">
                     <button class="col-lg-2">Valider</button>
                 </a>
-                <a href="index.php?action=deleteCom&amp;comId=<?= $com->getIdCom() ?>">
+                <a href="index.php?action=deleteCom&amp;comId=<?= htmlspecialchars($com->getIdCom()) ?>">
                     <button class="col-lg-offset-1 col-lg-2">Supprimer</button>
                 </a>
             </div>  

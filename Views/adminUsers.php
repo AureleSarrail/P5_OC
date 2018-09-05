@@ -22,12 +22,12 @@ ob_start();
             ?>
             <tr>
                 <th scope="row"><?= ++$i ?></th>
-                <td><?= $user->getName() ?></td>
-                <td><?= $user->getFirstname() ?></td>
-                <td><?= $user->getUsername() ?></td>
-                <td><?= $user->getMail() ?></td>
+                <td><?= htmlspecialchars($user->getName()) ?></td>
+                <td><?= htmlspecialchars($user->getFirstname()) ?></td>
+                <td><?= htmlspecialchars($user->getUsername()) ?></td>
+                <td><?= htmlspecialchars($user->getMail()) ?></td>
                 <td>
-                    <a href="index.php?action=deleteUser&amp;userId=<?= $user->getUserId() ?>">
+                    <a href="index.php?action=deleteUser&amp;userId=<?= htmlspecialchars($user->getUserId()) ?>">
                         <button>Supprimer</button>
                     </a>
                 </td>
