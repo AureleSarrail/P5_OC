@@ -16,7 +16,7 @@ ob_start();
         </tr>
     </thead>
     <tbody>
-        <?php 
+        <?php
         $i = 0;
         foreach ($users as $user) {
             ?>

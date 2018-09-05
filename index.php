@@ -93,7 +93,7 @@ if (isset($_GET['action'])) {
         isset($_GET['postId']) &&
         isset($_SESSION['userId'])) {
             echo('ici');
-            $comControl->insertCom($_GET['postId'],$_POST['content'],$_SESSION['userId']);
+            $comControl->insertCom($_GET['postId'], $_POST['content'], $_SESSION['userId']);
         }
     } elseif ($_GET['action'] == 'adminCom') {
         if (isset($_SESSION['rights'])) {

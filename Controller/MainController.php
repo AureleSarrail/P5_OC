@@ -20,6 +20,6 @@ class MainController
 
     public function contactUs()
     {
-    	require_once('Views/contactUs.php');
+        require_once('Views/contactUs.php');
     }
 }

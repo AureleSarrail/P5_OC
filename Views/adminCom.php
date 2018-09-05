@@ -16,8 +16,8 @@ else {
         ?> 
         <div class="row">
             <div class="col-lg-offset-3 col-lg-6">
-                 <p class="col-lg-12">Commentaire de <strong><?= $com->getUsername() ?></strong> le 
-                    <strong><?= substr($com->getCreationDate(), -2); ?>/
+                 <p class="col-lg-12">Commentaire de <strong><?= $com->getUsername() ?></strong> le <strong>
+                        <?= substr($com->getCreationDate(), -2); ?>/
                         <?= substr($com->getCreationDate(), 5, 2); ?>/
                         <?= substr($com->getCreationDate(), 0, 4); ?>
                     </strong>

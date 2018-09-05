@@ -63,7 +63,15 @@ class PostManager extends Model
         $update = $dataBase->prepare('update post
                                       set title = ?, head = ?, image = ?, content = ?, LastModif = CURRENT_DATE
                                       where postid = ?');
-        $update->execute(array($post->getTitle(),$post->getHead(),$post->getImage(),$post->getContent(),$post->getpostId()));
+        $update->execute(
+            array(
+                $post->getTitle(),
+                $post->getHead(),
+                $post->getImage(),
+                $post->getContent(),
+                $post->getpostId()
+            )
+        );
         return $postId;
     }
 
