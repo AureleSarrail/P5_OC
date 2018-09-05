@@ -13,7 +13,7 @@ class PostController extends MainController
 
         $posts = $postMod->getPosts();
 
-        require('Views/postsView.php');
+        $this->render('Views/postsView.php',['posts' => $posts]);
     }
 
     public function onePost($postId)

@@ -1,11 +1,6 @@
 <?php
 namespace Controller;
 
-use Model\Manager\PostManager;
-use Model\Manager\CommentManager;
-use Model\Manager\UserManager;
-use Model\Security\Security;
-
 class MainController
 {
     public function homeView()
@@ -21,5 +16,11 @@ class MainController
     public function contactUs()
     {
         require_once('Views/contactUs.php');
+    }
+
+    public function render($view, $data=[])
+    {
+        extract($data);
+        require($view);
     }
 }
