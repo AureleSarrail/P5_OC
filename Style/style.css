@@ -1,7 +1,7 @@
 @font-face
 {
-    font-family: 'Antenna';
-    src: url('fonts/ANTENNA.ttf');
+    font-family: 'Nasalization';
+    src: url('Style/fonts/nasalization-rg.ttf');
 }
 
 html,body
@@ -61,17 +61,17 @@ height:100%;
 
 #wrapper h3
 {
-    font-family: 'Antenna', sans-serif;
+    font-family: 'Nasalization', sans-serif;
 }
 
 #wrapper h2
 {
-    font-family: 'Antenna', sans-serif;
+    font-family: 'Nasalization', sans-serif;
 }
 
 #wrapper h1
 {
-    font-family: 'Antenna', sans-serif;
+    font-family: 'Nasalization', sans-serif;
 }
 
 #header_global
@@ -161,5 +161,12 @@ background-color: #17B890;
 {
     border: none;
     border-bottom: 1px solid black;
+}
+
+.social_media a
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
 }
 

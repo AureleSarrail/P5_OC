@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<div class="row" id="social_media">
+<div class="row social_media">
     <div class="col-lg-push-2 col-lg-8">
         <h2>Mes reseaux sociaux</h2>
         <br>

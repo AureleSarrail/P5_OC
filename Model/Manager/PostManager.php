@@ -13,7 +13,7 @@ class PostManager extends Model
                                     a.CreatDate,a.UserId,b.Username 
                                     from post a,user b
                                     where a.UserId = b.UserId
-                                    order by a.postid limit 10');
+                                    order by a.postid desc limit 10');
         $posts = [];
         while ($data = $result->fetch(\PDO::FETCH_ASSOC)) {
             $post = new Post();
