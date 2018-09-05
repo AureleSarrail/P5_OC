@@ -15,6 +15,11 @@ class MainController
 
     public function connectionPage()
     {
-        require('Views/Connect.php');
+        require('Views/connect.php');
+    }
+
+    public function contactUs()
+    {
+    	require_once('Views/contactUs.php');
     }
 }

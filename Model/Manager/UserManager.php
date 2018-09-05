@@ -22,14 +22,46 @@ class UserManager extends Model
     {
         $dataBase = $this->dbConnect();
         $user = new User();
-        $data['firstname'] = htmlspecialchars($firstname);
-        $data['name'] = htmlspecialchars($name);
-        $data['username'] = htmlspecialchars($username);
-        $data['mail'] = htmlspecialchars($mail);
+        $data = compact("firstname", "name", "username", "mail", "password");
         $pass = password_hash($password, PASSWORD_DEFAULT);
         $user->hydrate($data);
         $insert = $dataBase->prepare('insert into user (Name,Firstname,Username,Mail,Password,Rights) 
                                     values (?,?,?,?,?,2)');
         $insert->execute(array($user->getName(), $user->getFirstName(), $user->getUsername(), $user->getMail(), $pass));
+    }
+
+    public function getUsers()
+    {
+        $dataBase = $this->dbConnect();
+        $select = $dataBase->prepare('select userid,name,firstname,username,mail,rights
+                                      from user');
+        $select->execute();
+        $users=[];
+        while ($data = $select->fetch(\PDO::FETCH_ASSOC)) {
+            $user = new User();
+            $user->hydrate($data);
+            $users[] = $user;
+        }
+        return $users;
+    }
+
+    public function deleteUser($userId)
+    {
+        $dataBase = $this->dbConnect();
+        $delete = $dataBase->prepare('delete from user where userId = ?');
+        $delete->execute(array($userId));
+    }
+
+    public function userDetails($userId)
+    {
+        $dataBase = $this->dbConnect();
+        $select = $dataBase->prepare('select Name,Firstname,username,mail,rights
+                                      from user
+                                      where userid = ?');
+        $select->execute(array($userId));
+        $data = $select->fetch(\PDO::FETCH_ASSOC);
+        $user = new User();
+        $user->hydrate($data);
+        return $user;
     }
 }

@@ -111,6 +111,30 @@ if (isset($_GET['action'])) {
                 $comControl->deleteCom($_GET['comId']);
             }
         }
+    } elseif ($_GET['action'] == 'userAdmin') {
+        if (isset($_SESSION['rights'])) {
+            if ($_SESSION['rights'] == 1) {
+                $userControl->getUsers();
+            }
+        }
+    } elseif ($_GET['action'] == 'deleteUser') {
+        if (isset($_GET['userId'])) {
+            if (isset($_SESSION['rights'])) {
+                if ($_SESSION['rights'] == 1) {
+                    $userControl->deleteUser($_GET['userId']);
+                }
+            }
+        }
+    } elseif ($_GET['action'] == 'userDetails') {
+        if (isset($_GET['userId'])) {
+            if (isset($_SESSION['rights'])) {
+                if ($_SESSION['rights'] == 1) {
+                    $userControl->userDetails($_GET['userId']);
+                }
+            }
+        }
+    } elseif ($_GET['action'] == 'contactUs') {
+        $control->contactUs();
     }
 } else {
     $control->homeView();

@@ -55,4 +55,25 @@ class UserController extends MainController
         session_destroy();
         $this->homeView();
     }
+
+    public function getUsers()
+    {
+        $userMod = new UserManager();
+        $users = $userMod->getUsers();
+        require_once('Views/adminUsers.php');
+    }
+
+    public function deleteUser($userId)
+    {
+        $userMod = new UserManager();
+        $userMod->deleteUser($userId);
+        header('Location: index.php?action=userAdmin');
+    }
+
+    public function userDetails($userId)
+    {
+        $userMod = new UserManager();
+        $user = $userMod->userDetails($userId);
+        require_once('Views/userDetails.php');
+    }
 }

@@ -28,7 +28,7 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <button  type="button" class="btn btn-link">
-                                        <a href="#contact">Contactez nous</a>
+                                        <a href="index.php?action=contactUs">Contactez nous</a>
                                     </button>
                                 </li>
                             </ul>
@@ -88,7 +88,7 @@
                                     <a href="index.php?action=adminCom">Gestion Com</a>
                                 </li>
                                 <li class="col-lg-2">
-                                    <a href="#AdminUser.php">Gestion Utilisateurs</a>
+                                    <a href="index.php?action=userAdmin">Gestion Utilisateurs</a>
                                 </li>
                             <?php }
                             if (isset($_SESSION['username'])) {
