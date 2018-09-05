@@ -11,6 +11,7 @@ class User extends Entity
     private $username;
     private $mail;
     private $rights;
+    private $password;
 
     // GETTERS
 
@@ -42,6 +43,11 @@ class User extends Entity
     public function getRights()
     {
         return $this->rights;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     // SETTERS
@@ -82,5 +88,10 @@ class User extends Entity
     public function setRights($rights)
     {
         $this->rights = (int) $rights;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
 }

@@ -77,13 +77,13 @@ height:100%;
 #header_global
 {
     margin-bottom: 50px;
-    background-color: #17B890;
+    background-color: #3587A4;
     margin:0;
 }
 
 #wrapper {
   min-height: 100%;
-  background-color: #9DC5BB;
+  background-color: #81A4CD;
 }
 
 #main
@@ -100,7 +100,7 @@ height: 50px;
 clear:both;
 padding-top:10px;
 color:#fff;
-background-color: #17B890;
+background-color: #3587A4;
 /*padding-bottom: 10px;*/
 } 
 
