@@ -18,7 +18,7 @@ Inject a row in user and be cautious on two things
 
 You also have to modify your access to database in the file Model/Manager/Model.php.
 This file contain only one method for dbConnect.
-All you have to do is to edit it and replace <host>, <dbname>, <user> and <password> with your own.
+All you have to do is to edit it and replace host, dbname, user and password with your own.
   
 if you want to see it running, you can go to www.as-dev.fr.
   
