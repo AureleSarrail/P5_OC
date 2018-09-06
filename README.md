@@ -7,10 +7,18 @@ https://github.com/AureleSarrail/P5_OC.
 
 You can clone using git executing the command 'git clone https://github.com/AureleSarrail/P5_OC.git'.
 or you can download directly on the github page (same link).
+ 
+To create the database, you can use the file 'blog_asdev.sql'.
+It will create 3 tables : post,user and comments.
+The database freshly created will contain a few data that you can delete.
+In order to create the Admin, you will have to create it manually.
+Inject a row in user and be cautious on two things
+  - the rights must be at 1.
+  - the password must be the result of password_hash.
 
 You also have to modify your access to database in the file Model/Manager/Model.php.
 This file contain only one method for dbConnect.
-All you have to do is to edit it and replace <host>, <dbname>, <user> and <password> with you own.
+All you have to do is to edit it and replace <host>, <dbname>, <user> and <password> with your own.
   
 if you want to see it running, you can go to www.as-dev.fr.
   
