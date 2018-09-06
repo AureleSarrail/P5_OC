@@ -14,7 +14,7 @@
 </div>
 
 <div class="row" id="pres_bloc">
-    <div class="col-lg-push-2 col-lg-8">
+    <div class="col-lg-12 text-center">
         <h2>Bienvenue dans ce Blog</h2>
         <br>
         <p>Dans ce Blog, j'essaierai de vous faire suivre mes projets, mes avancements.</p>
@@ -34,7 +34,7 @@
 </div>
 
 <div class="row social_media">
-    <div class="col-lg-push-2 col-lg-8">
+    <div class="col-lg-12 text-center">
         <h2>Mes reseaux sociaux</h2>
         <br>
         <p>Ici vous pouvez retrouver les liens vers mes différents réseaux sociaux</p>
@@ -46,6 +46,63 @@
         </ul>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h2>
+            Me Contactez
+        </h2>
+        <br>
+        <p>Si vous souhaitez me contacter vous pouvez le faire via ce formulaire de contact,</p>
+        <br>
+        <p>Je prendrais le soin de vous répondre rapidement.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-offset-3 col-lg-6 text-center">
+        <form action="index.php?action=mail" method="POST">
+            <div class="form-row">
+                <div class="form-group col-lg-6">
+                    <label for="Name">Votre nom</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="Firstname">Votre prénom</label>
+                    <input type="text" name="firstname" class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-lg-12">
+                    <label for="mail">Votre mail</label>
+                    <input type="email" 
+                        class="form-control" 
+                        id="mail" 
+                        placeholder="nom.prenom@exemple.com"
+                        name="mail">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-lg-12">
+                    <label for="mailContent">Votre Message</label>
+                    <textarea class="form-control" 
+                        id="mailContent" 
+                        rows="10"
+                        name="mailContent"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-lg-offset-5 col-lg-2">
+                    <input type="submit" value="Envoyer">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
 
 <?php $viewContent = ob_get_clean(); ?>
 

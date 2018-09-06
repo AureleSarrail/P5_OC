@@ -170,3 +170,8 @@ background-color: #3587A4;
     color: black;
 }
 
+.social_media ul,li
+{
+    list-style-type: none;
+}
+
