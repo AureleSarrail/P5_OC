@@ -95,43 +95,33 @@ if (isset($_GET['action'])) {
             $comControl->insertCom($_GET['postId'], $_POST['content'], $_SESSION['userId']);
         }
     } elseif ($_GET['action'] == 'adminCom') {
-        if (isset($_SESSION['rights'])) {
-            if ($_SESSION['rights'] == 1) {
-                $comControl->getAwaitingComments();
-            }
+        if ($userControl->isAdmin()) {
+            $comControl->getAwaitingComments();
         }
     } elseif ($_GET['action'] == 'validCom') {
         if (isset($_GET['comId'])) {
-            if (isset($_SESSION['rights']) && ($_SESSION['rights'] == 1)) {
+            if ($userControl->isAdmin()) {
                 $comControl->validCom($_GET['comId']);    
             }
         }
     } elseif ($_GET['action'] == 'deleteCom') {
-        if (isset($_SESSION['rights'])) {
-            if ($_SESSION['rights'] == 1) {
-                $comControl->deleteCom($_GET['comId']);
-            }
+        if ($userControl->isAdmin()) {
+            $comControl->deleteCom($_GET['comId']);
         }
     } elseif ($_GET['action'] == 'userAdmin') {
-        if (isset($_SESSION['rights'])) {
-            if ($_SESSION['rights'] == 1) {
-                $userControl->getUsers();
-            }
+        if($userControl->isAdmin()) {
+            $userControl->getUsers();
         }
     } elseif ($_GET['action'] == 'deleteUser') {
         if (isset($_GET['userId'])) {
-            if (isset($_SESSION['rights'])) {
-                if ($_SESSION['rights'] == 1) {
-                    $userControl->deleteUser($_GET['userId']);
-                }
+            if ($userControl->isAdmin()) {
+                $userControl->deleteUser($_GET['userId']);
             }
         }
     } elseif ($_GET['action'] == 'userDetails') {
         if (isset($_GET['userId'])) {
-            if (isset($_SESSION['rights'])) {
-                if ($_SESSION['rights'] == 1) {
+            if ($userControl->isAdmin()) {
                     $userControl->userDetails($_GET['userId']);
-                }
             }
         }
     } elseif ($_GET['action'] == 'contactUs') {

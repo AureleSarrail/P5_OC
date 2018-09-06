@@ -31,4 +31,17 @@ class Security extends Model
         }
         return $pass;
     }
+
+    public function isAdmin()
+    {
+        if (isset($_SESSION['rights'])) {
+            if ($_SESSION['rights'] == 1) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+
+    }
 }

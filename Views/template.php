@@ -15,7 +15,7 @@
                     <header class="col-lg-12">
                         <div class="row">
                             <h1 class="col-lg-3" div id="logo">Blog AS-DEV</h1>
-                            <ul id="nav_head" class=" list-unstyled list-inline col-lg-push-3 col-lg-6">
+                            <ul id="nav_head" class=" list-unstyled list-inline col-lg-push-5 col-lg-6">
                                 <li class="list-inline-item">
                                     <button  type="button" class="btn btn-link">
                                         <a href="index.php">Acceuil</a>
@@ -24,11 +24,6 @@
                                 <li class="list-inline-item">
                                     <button  type="button" class="btn btn-link">
                                         <a href="index.php?action=listPost">Les Posts</a>
-                                    </button>
-                                </li>
-                                <li class="list-inline-item">
-                                    <button  type="button" class="btn btn-link">
-                                        <a href="index.php?action=contactUs">Contactez nous</a>
                                     </button>
                                 </li>
                             </ul>
@@ -91,7 +86,7 @@
                                 </li>
                             <?php }
                             if (isset($_SESSION['username'])) {
-                                ?> <p class="col-lg-offset-2 col-lg-2 username">Bonjour <?= $_SESSION['username'] ?> !
+                                ?> <p class="col-lg-offset-7 col-lg-3 username">Bonjour <?= $_SESSION['username'] ?> !
                                     (<a href="index.php?action=deconnect">Deconnexion</a>)</p>
                             <?php
                             } else {

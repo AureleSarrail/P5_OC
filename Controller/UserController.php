@@ -83,4 +83,12 @@ class UserController extends MainController
         $mail = $userMod->mail($name, $firstname, $mailContent, $mail);
         require_once('Views/home.php');
     }
+
+    public function isAdmin()
+    {
+        $userSecurity = new Security();
+        if ($userSecurity->isAdmin()) {
+            return true;
+        }
+    }
 }
