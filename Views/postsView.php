@@ -16,7 +16,13 @@ foreach ($posts as $post) {
                     <em><p class="col-lg-12">Créé par <strong><?= htmlspecialchars($post->getUsername()) ?></strong> 
                         le <strong><?= htmlspecialchars(substr($post->getCreatDate(), -2)); ?>/
                             <?= substr(htmlspecialchars($post->getCreatDate()), 5, 2); ?>/
-                            <?= substr(htmlspecialchars($post->getCreatDate()), 0, 4); ?></strong></p></em>
+                            <?= substr(htmlspecialchars($post->getCreatDate()), 0, 4); ?></strong>
+                    <?php if ($post->getLastModif() != $post->getCreatDate()) {
+                        ?> Modifié le  
+                        <strong><?= htmlspecialchars(substr($post->getLastModif(), -2)); ?>/
+                        <?= substr(htmlspecialchars($post->getLastModif()), 5, 2); ?>/
+                        <?= substr(htmlspecialchars($post->getLastModif()), 0, 4); ?></strong></p></em>
+                   <?php } ?>
                 </div> 
         </div>
     </div>
