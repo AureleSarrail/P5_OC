@@ -15,7 +15,7 @@
                     <header class="col-lg-12">
                         <div class="row">
                             <h1 class="col-lg-3" div id="logo">Blog AS-DEV</h1>
-                            <ul id="nav_head" class=" list-unstyled list-inline col-lg-push-5 col-lg-6">
+                            <ul id="nav_head" class=" list-unstyled list-inline col-lg-push-5 col-lg-4">
                                 <li class="list-inline-item">
                                     <button  type="button" class="btn btn-link">
                                         <a href="index.php">Acceuil</a>
@@ -53,10 +53,7 @@
                             <li class="col-lg-1">
                                 <a href="index.php?action=listPost">Les Posts</a>
                             </li>
-                            <li class="col-lg-2">
-                                <a href="#contact">Contactez nous</a>
-                            </li>
-                            <li class="col-lg-offset-6 col-lg-1">
+                            <li class="col-lg-offset-8 col-lg-1">
                                 <a href="index.php?action=Connect">Se connecter</a>
                             </li>   
                         </ul>
@@ -71,8 +68,10 @@
                         <ul class=" list-unstyled list-inline footer_list">
                             <?php if ($_SESSION['rights'] == 2) {
                                 ?>
-                                <li class="col-lg-1"><a href="index.php">Acceuil</a></li>
+                                <li class="col-lg-offset-1 col-lg-1"><a href="index.php">Acceuil</a></li>
                                 <li class="col-lg-1"><a href="index.php?action=listPost">Les Posts</a></li>
+                                <p class="col-lg-offset-6 col-lg-3 username">Bonjour <?= $_SESSION['username'] ?> !
+                                    (<a href="index.php?action=deconnect">Deconnexion</a>)</p>
                             <?php } elseif ($_SESSION['rights'] == 1) {
                                 ?>
                                 <li class="col-lg-offset-1 col-lg-2">
@@ -84,23 +83,14 @@
                                 <li class="col-lg-2">
                                     <a href="index.php?action=userAdmin">Gestion Utilisateurs</a>
                                 </li>
-                            <?php }
-                            if (isset($_SESSION['username'])) {
-                                ?> <p class="col-lg-offset-7 col-lg-3 username">Bonjour <?= $_SESSION['username'] ?> !
+                                <p class="col-lg-offset-2 col-lg-3 username">Bonjour <?= $_SESSION['username'] ?> !
                                     (<a href="index.php?action=deconnect">Deconnexion</a>)</p>
-                            <?php
-                            } else {
-                                ?>
-                                <li class="col-lg-offset-5 col-lg-1">
-                                    <a href="index.php?action=Connect">Se connecter</a>
-                                </li> 
-                                <?php
-                            } ?>
-                        </ul>
-                    </div>
+
+                            <?php }
+                        } ?>
+                    </ul>
                 </div>
-            </footer>
-        <?php
-        } ?>
+            </div>
+        </footer>
     </body>
 </html>
